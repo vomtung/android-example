@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/maskOutside"
+        android:background="#CC000000"
+        android:alpha="0.9"
+        android:text="click_me"
+        android:visibility="gone"
+        />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.vmtung.example.PopoverExampleActivity">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/startPopover"
+        android:text="click_me"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/startPopoverMask"
+        android:text="start Popover Mask"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/startPopoverMaskMagin"
+        android:text="start Popover with margin left right"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        />
+</LinearLayout>
+</RelativeLayout>
