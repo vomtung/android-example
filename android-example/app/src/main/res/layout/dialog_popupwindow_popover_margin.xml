@@ -1,6 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1"
+    android:alpha="0.9"
+    android:background="@android:color/transparent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@android:color/transparent"
+        android:alpha="1"
+        >
 
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_retangle_white"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:alpha="1"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Filter"
+            android:textSize="16sp"
+            android:textColor="#8a8989"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/employeeNameTextView"
+                android:text="@string/employee"
+                android:layout_alignParentTop="true"
+                android:textColor="#8a8989"
+                android:textSize="12sp"
+                android:layout_marginBottom="20dp"/>
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/employeeNameEditText"
+                android:layout_below="@+id/employeeNameTextView"
+                android:textAlignment="textStart"
+                android:hint="@string/employee_name"
+                android:textSize="16sp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <RelativeLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/startDateTextView"
+                    android:text="@string/start_date"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#8a8989"
+                    android:textSize="12sp" />
+
+                <ImageButton
+                    android:id="@+id/startDateButton"
+                    android:src="@drawable/ic_calendar_new_leave"
+                    android:background="@android:color/white"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/startDateTextView"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitXY" />
+
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:id="@+id/startDateEditText"
+                    android:inputType="none"
+                    android:editable="false"
+                    android:hint="@string/start_date"
+                    android:layout_below="@+id/startDateTextView"
+                    android:textAlignment="textStart"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/startDateButton"
+                    android:background="@android:color/transparent"
+                    android:textSize="16sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:id="@+id/startDateAlign"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:background="#d9d9d9"
+                    android:layout_below="@+id/startDateButton" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/endDateTextView"
+                    android:text="@string/end_date"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#8a8989"
+                    android:textSize="12sp" />
+
+                <ImageButton
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/endDateButton"
+                    android:src="@drawable/ic_calendar_new_leave"
+                    android:background="@android:color/white"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/endDateTextView"
+                    android:scaleType="fitCenter" />
+
+                <EditText
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/endDateEditText"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:editable="false"
+                    android:hint="@string/end_date"
+                    android:textAlignment="textStart"
+                    android:layout_below="@+id/endDateTextView"
+                    android:layout_toLeftOf="@+id/endDateButton"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:id="@+id/endDateAlign"
+                    android:layout_alignParentLeft="true"
+                    android:background="#d9d9d9"
+                    android:layout_below="@+id/endDateButton"
+                    android:layout_marginTop="5dp" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear"
+                android:id="@+id/clearTextViewDialog"
+                android:textColor="#3fafd7"
+                android:background="@color/white"
+                android:textAllCaps="true"
+                android:baselineAligned="false"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/filterTextViewDialog"
+                android:text="@string/filter"
+                android:textAllCaps="true"
+                android:background="@color/white"
+                android:textColor="#3fafd7"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
