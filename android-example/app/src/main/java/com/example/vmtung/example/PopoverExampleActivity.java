@@ -32,13 +32,9 @@ public class PopoverExampleActivity extends AppCompatActivity {
         // Closes the popup window when touch outside.
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
-        popupWindow.setOutsideTouchable(true);
-        popupWindow.setTouchable(true);
 
         popupWindowMargin.setOutsideTouchable(true);
         popupWindowMargin.setFocusable(true);
-        popupWindowMargin.setOutsideTouchable(true);
-        popupWindowMargin.setTouchable(true);
 
         startPopoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
