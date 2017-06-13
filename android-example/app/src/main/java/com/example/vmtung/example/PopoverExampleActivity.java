@@ -33,9 +33,14 @@ public class PopoverExampleActivity extends AppCompatActivity {
 
         LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         final View filterDialogLayoutShadow = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_example, null);
+        final View filterDialogDarkMaskLayout = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_dark_mask_view, null);
         final View dialogMadrginLayout= layoutInflater.inflate(R.layout.dialog_popupwindow_popover_margin, null);
 
         final PopupWindow popupWindow = new PopupWindow(filterDialogLayoutShadow,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                true);
+        final PopupWindow popupWindowDarkMask = new PopupWindow(filterDialogDarkMaskLayout,
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 true);
@@ -69,13 +74,20 @@ public class PopoverExampleActivity extends AppCompatActivity {
         startPopoverMaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                popupWindow.showAsDropDown(startPopoverMaskButton, 100, 50);
+                popupWindowDarkMask.showAsDropDown(startPopoverMaskButton, 100, 50);
                 maskOutside.setVisibility(View.VISIBLE);
                 maskOutside.bringToFront();
             }
         });
 
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                maskOutside.setVisibility(View.GONE);
+            }
+        });
+
+        popupWindowDarkMask.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
                 maskOutside.setVisibility(View.GONE);

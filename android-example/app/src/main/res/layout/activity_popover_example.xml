@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/maskOutside"
-        android:background="#CC000000"
+        android:background="#CCD2691E"
         android:alpha="0.9"
         android:text="click_me"
         android:visibility="gone"
