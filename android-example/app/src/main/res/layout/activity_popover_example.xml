@@ -20,6 +20,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.vmtung.example.PopoverExampleActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Popover is a type of iOS opoup, in Android similar popup Widget is PopupWindow"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
