@@ -179,4 +179,17 @@
     <string name="Sick">Sick</string>
     <string name="Annual">Annual</string>
     <string name="status">Status</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="menu">Menu</string>
+    <string name="left_menu">Left Menu</string>
+    <string name="right_menu">Right Menu</string>
+    <string name="window_popup_menu">Window Popup Menu</string>
+    <string name="frame_layout_example">Frame Layout Example</string>
+    <string name="order_event_view">Order Event View</string>
+    <string name="click_me">Click me</string>
 </resources>

@@ -16,7 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PopoverExampleActivity"></activity>
+        <activity android:name=".PopoverExampleActivity" />
+        <activity
+            android:name=".MenuDrawerActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".FrameLayoutExampleActivity"></activity>
     </application>
 
 </manifest>
