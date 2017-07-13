@@ -2,6 +2,7 @@ package com.example.vmtung.example;
 
 import android.content.Context;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -35,6 +36,7 @@ public class PopoverExampleActivity extends AppCompatActivity {
         final View filterDialogLayoutShadow = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_example, null);
         final View filterDialogDarkMaskLayout = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_dark_mask_view, null);
         final View dialogMadrginLayout= layoutInflater.inflate(R.layout.dialog_popupwindow_popover_margin, null);
+        final Button startPopoverShadow = (Button)findViewById(R.id.startPopoverShadow);
 
         final PopupWindow popupWindow = new PopupWindow(filterDialogLayoutShadow,
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -56,6 +58,16 @@ public class PopoverExampleActivity extends AppCompatActivity {
         popupWindowMargin.setOutsideTouchable(true);
         popupWindowMargin.setFocusable(true);
         popupWindowMargin.setWidth(width-200);
+
+        View filterDialogLayout = layoutInflater.inflate(R.layout.dialog_filter_received_overtime, null);
+        final PopupWindow pwindow = new PopupWindow(filterDialogLayout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,true);
+        // Closes the popup window when touch outside.
+        pwindow.setOutsideTouchable(true);
+        pwindow.setFocusable(true);
+
+        pwindow.setOutsideTouchable(true);
+        pwindow.setTouchable(true);
+        pwindow.setBackgroundDrawable(new BitmapDrawable());
 
         startPopoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +117,13 @@ public class PopoverExampleActivity extends AppCompatActivity {
                 p.dimAmount = 0.6f;
                 //p.dimAmount = 0.8f;
                 wm.updateViewLayout(container, p);
+            }
+        });
+
+        startPopoverShadow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pwindow.showAsDropDown(startPopoverShadow);
             }
         });
     }

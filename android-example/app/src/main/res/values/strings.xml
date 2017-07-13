@@ -192,4 +192,6 @@
     <string name="frame_layout_example">Frame Layout Example</string>
     <string name="order_event_view">Order Event View</string>
     <string name="click_me">Click me</string>
+    <string name="date">Date</string>
+    <string name="payment_type">payment type</string>
 </resources>
