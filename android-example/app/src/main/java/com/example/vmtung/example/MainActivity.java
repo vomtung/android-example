@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Button menuButton = (Button)findViewById(R.id.menuButton);
         Button frameLayoutButton = (Button)findViewById(R.id.frameLayoutButton);
         Button spinnerExampleButton = (Button)findViewById(R.id.spinnerExampleButton);
+        Button alertDialogExampleButton = (Button)findViewById(R.id.alertDialogExampleButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, SpinnerActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        alertDialogExampleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, AlerDialogExampleActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });

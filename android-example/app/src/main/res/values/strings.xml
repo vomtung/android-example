@@ -211,4 +211,8 @@
         <item>France</item>
         <item>Canada</item>
     </array>
+    <string name="single_choice">Single Choice</string>
+    <string name="ok">Ok</string>
+    <string name="multichoice">Multichoice</string>
+    <string name="alert_dialog">Alert Dialog</string>
 </resources>

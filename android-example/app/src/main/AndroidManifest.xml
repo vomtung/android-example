@@ -23,7 +23,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".FrameLayoutExampleActivity" />
-        <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".SpinnerActivity" />
+        <activity android:name=".AlerDialogExampleActivity"></activity>
     </application>
 
 </manifest>
