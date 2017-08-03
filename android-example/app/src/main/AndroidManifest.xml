@@ -22,7 +22,8 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".FrameLayoutExampleActivity"></activity>
+        <activity android:name=".FrameLayoutExampleActivity" />
+        <activity android:name=".SpinnerActivity"></activity>
     </application>
 
 </manifest>

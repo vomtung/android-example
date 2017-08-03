@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Button popoverButton = (Button)findViewById(R.id.popoverButton);
         Button menuButton = (Button)findViewById(R.id.menuButton);
         Button frameLayoutButton = (Button)findViewById(R.id.frameLayoutButton);
-        Button orderEventViewButton = (Button)findViewById(R.id.orderEventViewButton);
+        Button spinnerExampleButton = (Button)findViewById(R.id.spinnerExampleButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,13 +42,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        orderEventViewButton.setOnClickListener(new View.OnClickListener() {
+        spinnerExampleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent i = new Intent(MainActivity.this, FrameLayoutExampleActivity.class);
-                //MainActivity.this.startActivity(i);
-
-
+                Intent i = new Intent(MainActivity.this, SpinnerActivity.class);
+                MainActivity.this.startActivity(i);
             }
         });
     }

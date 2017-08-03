@@ -194,4 +194,21 @@
     <string name="click_me">Click me</string>
     <string name="date">Date</string>
     <string name="payment_type">payment type</string>
+    <string name="spinner_example">Spinner Example</string>
+    <string name="lauch_spinner">Lauch Spinner</string>
+    <array name="array_juices">
+        <item>Mango</item>
+        <item>Water Melon</item>
+        <item>Lemon</item>
+        <item>grape</item>
+        <item>Guava</item>
+    </array>
+
+    <array name="array_countries">
+        <item>United State</item>
+        <item>England</item>
+        <item>Russia</item>
+        <item>France</item>
+        <item>Canada</item>
+    </array>
 </resources>
