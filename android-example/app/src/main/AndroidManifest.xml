@@ -27,7 +27,8 @@
         <activity android:name=".AlerDialogExampleActivity" />
         <activity android:name=".CompoundViewActivity" />
         <activity android:name=".CustomViewActivity" />
-        <activity android:name=".CanvasAndPaintExampleActivity"></activity>
+        <activity android:name=".CanvasAndPaintExampleActivity" />
+        <activity android:name=".CanvasAndPaint2Activity"></activity>
     </application>
 
 </manifest>

@@ -38,7 +38,7 @@ public class CanvasAndPaintExampleActivity extends AppCompatActivity {
         private Bitmap mBitmap;
         private Canvas mCanvas;
         private Path mPath;
-        private Paint   mBitmapPaint;
+        private Paint mBitmapPaint;
         Context context;
         private Paint circlePaint;
         private Path circlePath;
