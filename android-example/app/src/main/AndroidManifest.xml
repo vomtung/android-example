@@ -24,7 +24,10 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".FrameLayoutExampleActivity" />
         <activity android:name=".SpinnerActivity" />
-        <activity android:name=".AlerDialogExampleActivity"></activity>
+        <activity android:name=".AlerDialogExampleActivity" />
+        <activity android:name=".CompoundViewActivity" />
+        <activity android:name=".CustomViewActivity" />
+        <activity android:name=".CanvasAndPaintExampleActivity"></activity>
     </application>
 
 </manifest>

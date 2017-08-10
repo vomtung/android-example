@@ -42,11 +42,13 @@ public class PopoverExampleActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 true);
-        final PopupWindow popupWindowDarkMask = new PopupWindow(filterDialogDarkMaskLayout,
+        final PopupWindow popupWindowDarkMask = new PopupWindow(
+                filterDialogDarkMaskLayout,
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 true);
-        final PopupWindow popupWindowMargin = new PopupWindow(dialogMadrginLayout,
+        final PopupWindow popupWindowMargin = new PopupWindow(
+                dialogMadrginLayout,
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 true);

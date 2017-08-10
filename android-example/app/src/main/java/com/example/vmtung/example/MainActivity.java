@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         Button frameLayoutButton = (Button)findViewById(R.id.frameLayoutButton);
         Button spinnerExampleButton = (Button)findViewById(R.id.spinnerExampleButton);
         Button alertDialogExampleButton = (Button)findViewById(R.id.alertDialogExampleButton);
+        Button compundViewButton = (Button)findViewById(R.id.compundViewButton);
+        Button customViewButton = (Button)findViewById(R.id.customViewButton);
+        Button canvasButton = (Button)findViewById(R.id.canvasButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AlerDialogExampleActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        compundViewButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CompoundViewActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        customViewButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CustomViewActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        canvasButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CanvasAndPaintExampleActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });

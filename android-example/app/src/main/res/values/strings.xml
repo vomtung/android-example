@@ -215,4 +215,8 @@
     <string name="ok">Ok</string>
     <string name="multichoice">Multichoice</string>
     <string name="alert_dialog">Alert Dialog</string>
+    <string name="compound_view">Compound View</string>
+    <string name="custom_view">Custom View</string>
+    <string name="reset_button">Reset Button</string>
+    <string name="canvas_and_paint_example">Canvas and Paint example</string>
 </resources>
