@@ -21,6 +21,7 @@ public class CanvasAndPaint2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas_and_paint2);
         final ClockView clock = (ClockView) findViewById(R.id.clockViewId);
+        final BitMapClockView bitmapClock = (BitMapClockView) findViewById(R.id.bitMapClockView);
 
         Timer myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
@@ -31,6 +32,7 @@ public class CanvasAndPaint2Activity extends AppCompatActivity {
                     @Override
                     public void run() {
                         updateTimeClock(clock);
+                        updateTimeClock(bitmapClock);
                     }
                 });
             }
@@ -39,6 +41,26 @@ public class CanvasAndPaint2Activity extends AppCompatActivity {
     }
 
     private void updateTimeClock(ClockView clock)
+    {
+        float milliSeconAngle = clock.getMillisecondAngel();
+        float minuteAngle = clock.getMinuteAngel();
+        Log.d("DEBUG","angle:"+milliSeconAngle);
+        milliSeconAngle = milliSeconAngle - (float) (Math.PI/30);
+
+
+        if(milliSeconAngle<-2*Math.PI)
+        {
+            milliSeconAngle = 0;
+            minuteAngle = minuteAngle - (float) (Math.PI/30);
+        }
+
+        clock.setMillisecondAngel(milliSeconAngle);
+        clock.setMinuteAngel(minuteAngle);
+
+        clock.invalidate();
+    }
+
+    private void updateTimeClock(BitMapClockView clock)
     {
         float milliSeconAngle = clock.getMillisecondAngel();
         float minuteAngle = clock.getMinuteAngel();

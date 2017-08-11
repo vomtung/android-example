@@ -6,17 +6,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.vmtung.example.CanvasAndPaint2Activity">
-    <com.example.vmtung.example.CircleView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <com.example.vmtung.example.CircleView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="50dp"
+                >
 
-    </com.example.vmtung.example.CircleView>
-    <com.example.vmtung.example.ClockView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/clockViewId"
-        >
+            </com.example.vmtung.example.CircleView>
+            <com.example.vmtung.example.ClockView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/clockViewId"
+                >
 
-    </com.example.vmtung.example.ClockView>
+            </com.example.vmtung.example.ClockView>
+
+            <com.example.vmtung.example.BitMapClockView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/bitMapClockView"
+                >
+
+            </com.example.vmtung.example.BitMapClockView>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
