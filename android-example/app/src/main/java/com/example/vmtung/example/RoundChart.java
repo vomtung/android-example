@@ -79,6 +79,10 @@ public class RoundChart extends ViewGroup {
 
     }
 
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+    }
 
     private class Item {
         public String mLabel;
@@ -107,10 +111,9 @@ public class RoundChart extends ViewGroup {
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-            Log.d("Debug","==PieView onDraw is call===");
             for (RoundChart.Item it : mData)
             {
-                mPiePaint.setShader(it.mShader);
+                mPiePaint.setColor(it.mColor);
                 canvas.drawArc(
                         mBounds,
                         360 - it.mEndAngle,
@@ -157,68 +160,27 @@ public class RoundChart extends ViewGroup {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        //
-        // Set dimensions for text, pie chart, etc
-        //
-        // Account for padding
+
         float xpad = (float) (getPaddingLeft() + getPaddingRight());
         float ypad = (float) (getPaddingTop() + getPaddingBottom());
 
         // Account for the label
-        if (mShowText) xpad += mTextWidth;
 
-        float ww = (float) w - xpad;
-        float hh = (float) h - ypad;
 
         // Figure out how big we can make the pie.
-        float diameter = Math.min(ww, hh);
+        float diameter = Math.min(w, h);
         mPieBounds = new RectF(
                 0.0f,
                 0.0f,
                 diameter,
                 diameter);
-        mPieBounds.offsetTo(getPaddingLeft(), getPaddingTop());
-
-        mPointerY = mTextY - (mTextHeight / 2.0f);
-        float pointerOffset = mPieBounds.centerY() - mPointerY;
-
-        // Make adjustments based on text position
-        if (mTextPos == 0) {
-            //mTextPaint.setTextAlign(Paint.Align.RIGHT);
-            if (mShowText) mPieBounds.offset(mTextWidth, 0.0f);
-            mTextX = mPieBounds.left;
-
-            if (pointerOffset < 0) {
-                pointerOffset = -pointerOffset;
-                mCurrentItemAngle = 225;
-            } else {
-                mCurrentItemAngle = 135;
-            }
-            mPointerX = mPieBounds.centerX() - pointerOffset;
-        } else {
-            // mTextPaint.setTextAlign(Paint.Align.LEFT);
-            mTextX = mPieBounds.right;
-
-            if (pointerOffset < 0) {
-                pointerOffset = -pointerOffset;
-                mCurrentItemAngle = 315;
-            } else {
-                mCurrentItemAngle = 45;
-            }
-            mPointerX = mPieBounds.centerX() + pointerOffset;
-        }
-
-        mShadowBounds = new RectF(
-                mPieBounds.left + 10,
-                mPieBounds.bottom + 10,
-                mPieBounds.right - 10,
-                mPieBounds.bottom + 20);
 
         // Lay out the child view that actually draws the pie.
         mPieView.layout((int) mPieBounds.left,
                 (int) mPieBounds.top,
                 (int) mPieBounds.right,
                 (int) mPieBounds.bottom);
+
 
         onDataChanged();
     }
@@ -232,18 +194,6 @@ public class RoundChart extends ViewGroup {
             it.mEndAngle = (int) ((float) currentAngle + it.mValue * 360.0f / mTotal);
             currentAngle = it.mEndAngle;
 
-            it.mShader = new SweepGradient(
-                    mPieBounds.width() / 2.0f,
-                    mPieBounds.height() / 2.0f,
-                    new int[]{
-                            it.mHighlight,
-                            it.mHighlight
-                    },
-                    new float[]{
-                            0,
-                            1.0f
-                    }
-            );
         }
 
 
