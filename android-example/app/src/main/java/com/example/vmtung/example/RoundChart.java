@@ -36,39 +36,12 @@ public class RoundChart extends ViewGroup {
 
     private Paint mPiePaint;
 
-    private boolean mShowText = false;
-
-    private float mTextX = 0.0f;
-    private float mTextY = 0.0f;
-    private float mTextWidth = 0.0f;
     private float mTextHeight = 0.0f;
-    private int mTextPos = 0;
 
     private float mHighlightStrength = 1.15f;
 
-    private float mPointerRadius = 2.0f;
-    private float mPointerX;
-    private float mPointerY;
-
-    private int mPieRotation;
-
-    private PieChart.OnCurrentItemChangedListener mCurrentItemChangedListener = null;
-
-    private int mTextColor;
     private RoundChart.PieView mPieView;
-    private Scroller mScroller;
-    private ValueAnimator mScrollAnimator;
-    private GestureDetector mDetector;
 
-    // The angle at which we measure the current item. This is
-    // where the pointer points.
-    private int mCurrentItemAngle;
-
-    // the index of the current item.
-    private int mCurrentItem = 0;
-    private boolean mAutoCenterInSlice;
-    private ObjectAnimator mAutoCenterAnimator;
-    private RectF mShadowBounds = new RectF();
     public RoundChart(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
@@ -94,7 +67,6 @@ public class RoundChart extends ViewGroup {
         public int mEndAngle;
 
         public int mHighlight;
-        public Shader mShader;
     }
 
     private class PieView extends View {
@@ -159,10 +131,6 @@ public class RoundChart extends ViewGroup {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
-
-        float xpad = (float) (getPaddingLeft() + getPaddingRight());
-        float ypad = (float) (getPaddingTop() + getPaddingBottom());
 
         // Account for the label
 
