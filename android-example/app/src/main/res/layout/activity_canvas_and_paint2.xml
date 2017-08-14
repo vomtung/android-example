@@ -37,6 +37,14 @@
 
             </com.example.vmtung.example.BitMapClockView>
 
+            <com.example.vmtung.example.RoundChart
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:id="@+id/exampleRoundChart"
+                >
+
+            </com.example.vmtung.example.RoundChart>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
