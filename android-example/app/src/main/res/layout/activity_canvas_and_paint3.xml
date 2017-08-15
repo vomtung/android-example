@@ -14,7 +14,7 @@
         custom:hintMarginLeft="50dp"
         custom:textHintMarginTop="50dp"
         custom:textHintDistanceBetweenAnother="30dp"
-        custom:chartMarginLeft = "0dp"
+        custom:chartMarginLeft = "30dp"
         custom:chartRadius = "100dp"
         custom:chartMarginTop = "20dp"
         custom:textHintSize = "15sp"

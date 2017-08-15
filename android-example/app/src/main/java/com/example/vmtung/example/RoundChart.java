@@ -28,7 +28,7 @@ import java.util.List;
  * Created by vmtung on 11/08/2017.
  */
 
-public class RoundChart extends ViewGroup {
+public class RoundChart extends View {
 
     private RectF mPieBounds = new RectF();
     private List<RoundChart.Item> mData = new ArrayList<RoundChart.Item>();
@@ -48,7 +48,9 @@ public class RoundChart extends ViewGroup {
     private float textHintSize = 0f;
     private float colorIconHintSize = 0f;
 
-    private RoundChart.PieView mPieView;
+    //private RoundChart.PieView mPieView;
+
+    private RectF mBounds;
 
     public RoundChart(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -85,58 +87,49 @@ public class RoundChart extends ViewGroup {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        float mTextY = textHintMarginTop;
+        float centerX = (mBounds.left + mBounds.right) / 2;
+        float centerY = (mBounds.top + mBounds.bottom) / 2;
+
+        for (RoundChart.Item it : mData)
+        {
+            mPiePaint.setColor(it.mColor);
+            canvas.drawArc(
+                    mBounds,
+                    360 - it.mEndAngle,
+                    it.mEndAngle - it.mStartAngle,
+                    true,
+                    mPiePaint
+            );
+
+            canvas.drawText(it.mLabel, mBounds.right+hintMarginLeft+ getContext().getResources().getDimension(R.dimen.circle_chart_hint_margin_left), mTextY, mTextPaint);
+            canvas.drawRect( mBounds.right+hintMarginLeft, mTextY - colorIconHintSize, mBounds.right+hintMarginLeft + colorIconHintSize, mTextY, mPiePaint);
+
+            mTextY = mTextY+textHintDistanceBetweenAnother;
+
+        }
+
+        for (RoundChart.Item it : mData)
+        {
+            canvas.drawText(
+                    it.percent+"%",
+                    (float)(centerX+(chartRadius * Math.cos((it.mEndAngle+it.mStartAngle)*Math.PI/360))/2),
+                    (float)(centerY - (chartRadius * Math.sin((it.mEndAngle+it.mStartAngle)*Math.PI/360))/2),
+                    mTextPaint);
+        }
     }
 
-    private class Item {
+    public class Item {
         public String mLabel;
         public float mValue;
         public int mColor;
+        public int percent;
 
         // computed values
         public int mStartAngle;
         public int mEndAngle;
-
         public int mHighlight;
-    }
-
-
-    private class PieView extends View {
-
-        private RectF mBounds;
-
-        public PieView(Context context) {
-            super(context);
-        }
-
-        @Override
-        protected void onDraw(Canvas canvas) {
-            super.onDraw(canvas);
-
-            float mTextY = textHintMarginTop;
-            for (RoundChart.Item it : mData)
-            {
-                mPiePaint.setColor(it.mColor);
-                canvas.drawArc(
-                        mBounds,
-                        360 - it.mEndAngle,
-                        it.mEndAngle - it.mStartAngle,
-                        true,
-                        mPiePaint
-                );
-
-                canvas.drawText(it.mLabel, mBounds.right+hintMarginLeft+ getContext().getResources().getDimension(R.dimen.circle_chart_hint_margin_left), mTextY, mTextPaint);
-                canvas.drawRect( mBounds.right+hintMarginLeft, mTextY - colorIconHintSize, mBounds.right+hintMarginLeft + colorIconHintSize, mTextY, mPiePaint);
-                mTextY = mTextY+textHintDistanceBetweenAnother;
-
-            }
-
-        }
-
-        @Override
-        protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-            mBounds = new RectF(chartMarginLeft, chartMarginTop, chartMarginLeft + 2* chartRadius, chartMarginTop + 2* chartRadius);
-        }
-
     }
 
     public int addItem(String label, float value, int color) {
@@ -165,6 +158,9 @@ public class RoundChart extends ViewGroup {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
+
+        mBounds = new RectF(chartMarginLeft, chartMarginTop, chartMarginLeft + 2* chartRadius, chartMarginTop + 2* chartRadius);
+
         // Figure out how big we can make the pie.
         float diameter = Math.min(w, h);
         mPieBounds = new RectF(
@@ -175,6 +171,7 @@ public class RoundChart extends ViewGroup {
         //mPieBounds.offsetTo(getPaddingLeft(), getPaddingTop());
 
         // Lay out the child view that actually draws the pie.
+        /*
         mPieView.layout(
                 (int) mPieBounds.left,
                 (int) mPieBounds.top,
@@ -183,7 +180,7 @@ public class RoundChart extends ViewGroup {
         );
 
 
-        onDataChanged();
+        onDataChanged();*/
     }
 
     private void onDataChanged() {
@@ -194,6 +191,7 @@ public class RoundChart extends ViewGroup {
             it.mStartAngle = currentAngle;
             it.mEndAngle = (int) ((float) currentAngle + it.mValue * 360.0f / mTotal);
             currentAngle = it.mEndAngle;
+            it.percent = (int)(it.mValue*100/mTotal);
 
         }
 
@@ -208,8 +206,8 @@ public class RoundChart extends ViewGroup {
         mTextPaint.setColor(Color.BLACK);
         mTextPaint.setTextSize(textHintSize);
 
-        mPieView = new PieView(getContext());
-        addView(mPieView);
+        //mPieView = new PieView(getContext());
+        //addView(mPieView);
         //mPieView.rotateTo(mPieRotation);
 
     }

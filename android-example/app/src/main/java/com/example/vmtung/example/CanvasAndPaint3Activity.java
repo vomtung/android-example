@@ -17,7 +17,7 @@ public class CanvasAndPaint3Activity extends AppCompatActivity {
         chart.addItem("Calliope", 2.5f, ContextCompat.getColor(this, R.color.yellow));
         chart.addItem("Daedalus", 3, ContextCompat.getColor(this, R.color.colorAccent));
         chart.addItem("Euripides", 1, ContextCompat.getColor(this, R.color.red));
-        chart.addItem("Ganymede", 3, ContextCompat.getColor(this, R.color.black));
+        chart.addItem("Ganymede", 3, ContextCompat.getColor(this, R.color.grape));
     }
 
 
