@@ -35,6 +35,10 @@
         <attr name="chartMarginTop" format="dimension"/>
         <attr name="textHintSize" format="dimension"/>
         <attr name="colorIconHintSize" format="dimension"/>
+        <attr name="chartNameMarginTop" format="dimension"/>
+        <attr name="chartNameMarginLeft" format="dimension"/>
+        <attr name="chartNameTextSize" format="dimension"/>
+        <attr name="chartName" format="string"/>
     </declare-styleable>
 
 </resources>

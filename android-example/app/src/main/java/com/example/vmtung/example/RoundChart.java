@@ -35,6 +35,7 @@ public class RoundChart extends View {
 
     private Paint mPiePaint;
     private Paint mTextPaint;
+    private Paint chartNamePaint;
 
     private float mTotal = 0.0f;
     private float mTextHeight = 0.0f;
@@ -47,6 +48,10 @@ public class RoundChart extends View {
     private float chartMarginTop = 0f;
     private float textHintSize = 0f;
     private float colorIconHintSize = 0f;
+    private float chartNameMarginTop = 0f;
+    private float chartNameMarginLeft = 0f;
+    private float chartNameTextSize = 0f;
+    private String chartName ;
 
     //private RoundChart.PieView mPieView;
 
@@ -71,6 +76,10 @@ public class RoundChart extends View {
             chartMarginTop = a.getDimension(R.styleable.RoundChart_chartMarginTop, 0);
             textHintSize = a.getDimension(R.styleable.RoundChart_textHintSize, 0);
             colorIconHintSize = a.getDimension(R.styleable.RoundChart_colorIconHintSize, 0);
+            chartNameMarginTop = a.getDimension(R.styleable.RoundChart_chartNameMarginTop, 0);
+            chartNameMarginLeft = a.getDimension(R.styleable.RoundChart_chartNameMarginLeft, 0);
+            chartNameTextSize = a.getDimension(R.styleable.RoundChart_chartNameTextSize, 0);
+            chartName = a.getString(R.styleable.RoundChart_chartName);
 
 
         } finally {
@@ -118,6 +127,8 @@ public class RoundChart extends View {
                     (float)(centerY - (chartRadius * Math.sin((it.mEndAngle+it.mStartAngle)*Math.PI/360))/2),
                     mTextPaint);
         }
+
+        canvas.drawText(chartName, chartNameMarginLeft, chartNameMarginTop, chartNamePaint);
     }
 
     public class Item {
@@ -168,19 +179,6 @@ public class RoundChart extends View {
                 0f,
                 diameter,
                 diameter);
-        //mPieBounds.offsetTo(getPaddingLeft(), getPaddingTop());
-
-        // Lay out the child view that actually draws the pie.
-        /*
-        mPieView.layout(
-                (int) mPieBounds.left,
-                (int) mPieBounds.top,
-                (int) mPieBounds.right,
-                (int) mPieBounds.bottom
-        );
-
-
-        onDataChanged();*/
     }
 
     private void onDataChanged() {
@@ -206,9 +204,8 @@ public class RoundChart extends View {
         mTextPaint.setColor(Color.BLACK);
         mTextPaint.setTextSize(textHintSize);
 
-        //mPieView = new PieView(getContext());
-        //addView(mPieView);
-        //mPieView.rotateTo(mPieRotation);
-
+        chartNamePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        chartNamePaint.setColor(Color.BLACK);
+        chartNamePaint.setTextSize(chartNameTextSize);
     }
 }

@@ -16,9 +16,13 @@
         custom:textHintDistanceBetweenAnother="30dp"
         custom:chartMarginLeft = "30dp"
         custom:chartRadius = "100dp"
-        custom:chartMarginTop = "20dp"
+        custom:chartMarginTop = "40dp"
         custom:textHintSize = "15sp"
         custom:colorIconHintSize = "15sp"
+        custom:chartName = "@string/example_chart_name"
+        custom:chartNameMarginTop = "20dp"
+        custom:chartNameMarginLeft = "80dp"
+        custom:chartNameTextSize = "16sp"
         >
 
     </com.example.vmtung.example.RoundChart>
