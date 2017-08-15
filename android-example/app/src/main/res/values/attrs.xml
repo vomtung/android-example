@@ -27,8 +27,14 @@
         <attr name="showText" format="boolean"/>
     </declare-styleable>
     <declare-styleable name="RoundChart">
-        <attr name="textHintMarginLeft" format="dimension"/>
+        <attr name="hintMarginLeft" format="dimension"/>
         <attr name="textHintMarginTop" format="dimension"/>
+        <attr name="textHintDistanceBetweenAnother" format="dimension"/>
+        <attr name="chartMarginLeft" format="dimension"/>
+        <attr name="chartRadius" format="dimension"/>
+        <attr name="chartMarginTop" format="dimension"/>
+        <attr name="textHintSize" format="dimension"/>
+        <attr name="colorIconHintSize" format="dimension"/>
     </declare-styleable>
 
 </resources>

@@ -8,10 +8,17 @@
     tools:context="com.example.vmtung.example.CanvasAndPaint3Activity">
 
     <com.example.vmtung.example.RoundChart
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/exampleRoundChart"
-        custom:textHintMarginLeft="300dp"
+        custom:hintMarginLeft="50dp"
+        custom:textHintMarginTop="50dp"
+        custom:textHintDistanceBetweenAnother="30dp"
+        custom:chartMarginLeft = "0dp"
+        custom:chartRadius = "100dp"
+        custom:chartMarginTop = "20dp"
+        custom:textHintSize = "15sp"
+        custom:colorIconHintSize = "15sp"
         >
 
     </com.example.vmtung.example.RoundChart>
