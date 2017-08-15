@@ -26,5 +26,9 @@
         <attr name="pointerRadius" format="dimension"/>
         <attr name="showText" format="boolean"/>
     </declare-styleable>
+    <declare-styleable name="RoundChart">
+        <attr name="textHintMarginLeft" format="dimension"/>
+        <attr name="textHintMarginTop" format="dimension"/>
+    </declare-styleable>
 
 </resources>

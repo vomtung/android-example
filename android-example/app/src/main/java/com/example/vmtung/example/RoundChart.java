@@ -3,6 +3,7 @@ package com.example.vmtung.example;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -29,21 +30,36 @@ import java.util.List;
 
 public class RoundChart extends ViewGroup {
 
-    private List<RoundChart.Item> mData = new ArrayList<RoundChart.Item>();
-    private float mTotal = 0.0f;
-
     private RectF mPieBounds = new RectF();
+    private List<RoundChart.Item> mData = new ArrayList<RoundChart.Item>();
 
     private Paint mPiePaint;
+    private Paint mTextPaint;
 
+    private float mTotal = 0.0f;
     private float mTextHeight = 0.0f;
-
     private float mHighlightStrength = 1.15f;
+    private float textHintMarginLeft = 0f;
+    private float textHintMarginTop = 0f;
 
     private RoundChart.PieView mPieView;
 
     public RoundChart(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.RoundChart,
+                0, 0
+        );
+
+        try
+        {
+            textHintMarginLeft = a.getDimension(R.styleable.RoundChart_textHintMarginLeft, 0);
+            textHintMarginTop = a.getDimension(R.styleable.RoundChart_textHintMarginTop, 0);
+
+        } finally {
+            a.recycle();
+        }
         init();
     }
 
@@ -69,13 +85,11 @@ public class RoundChart extends ViewGroup {
         public int mHighlight;
     }
 
+
     private class PieView extends View {
 
-        /**
-         * Construct a PieView
-         *
-         * @param context
-         */
+        private RectF mBounds;
+
         public PieView(Context context) {
             super(context);
         }
@@ -83,6 +97,7 @@ public class RoundChart extends ViewGroup {
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
+
             for (RoundChart.Item it : mData)
             {
                 mPiePaint.setColor(it.mColor);
@@ -95,14 +110,19 @@ public class RoundChart extends ViewGroup {
                 );
             }
 
+            int mTextY =50;
+            for (Item it: mData) {
+
+                canvas.drawText(it.mLabel, textHintMarginLeft, mTextY, mTextPaint);
+                mTextY = mTextY+50;
+            }
+
         }
 
         @Override
         protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-            mBounds = new RectF(0, 0, w, h);
+            mBounds = new RectF(100, 100, w-500, h-500);
         }
-
-        RectF mBounds;
 
     }
 
@@ -138,16 +158,19 @@ public class RoundChart extends ViewGroup {
         // Figure out how big we can make the pie.
         float diameter = Math.min(w, h);
         mPieBounds = new RectF(
-                0.0f,
-                0.0f,
+                0f,
+                0f,
                 diameter,
                 diameter);
+        //mPieBounds.offsetTo(getPaddingLeft(), getPaddingTop());
 
         // Lay out the child view that actually draws the pie.
-        mPieView.layout((int) mPieBounds.left,
+        mPieView.layout(
+                (int) mPieBounds.left,
                 (int) mPieBounds.top,
                 (int) mPieBounds.right,
-                (int) mPieBounds.bottom);
+                (int) mPieBounds.bottom
+        );
 
 
         onDataChanged();
@@ -164,20 +187,20 @@ public class RoundChart extends ViewGroup {
 
         }
 
-
     }
 
     private void init() {
 
         mPiePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPiePaint.setStyle(Paint.Style.FILL);
-        mPiePaint.setTextSize(mTextHeight);
+
+        mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mTextPaint.setColor(Color.BLACK);
+        mTextPaint.setTextSize(50);
 
         mPieView = new PieView(getContext());
         addView(mPieView);
         //mPieView.rotateTo(mPieRotation);
 
     }
-
-
 }

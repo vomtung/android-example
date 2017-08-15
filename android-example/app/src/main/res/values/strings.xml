@@ -220,4 +220,5 @@
     <string name="reset_button">Reset Button</string>
     <string name="canvas_and_paint_example">Canvas and Paint example</string>
     <string name="canvas_and_paint_example_2">Canvas and Paint example 2</string>
+    <string name="canvas_and_paint_example_3">Canvas and Paint example 3</string>
 </resources>

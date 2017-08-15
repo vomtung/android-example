@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button customViewButton = (Button)findViewById(R.id.customViewButton);
         Button canvasButton = (Button)findViewById(R.id.canvasButton);
         Button canvasButton2 = (Button)findViewById(R.id.canvasButton2);
+        Button canvasButton3 = (Button)findViewById(R.id.canvasButton3);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +95,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, CanvasAndPaint2Activity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        canvasButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CanvasAndPaint3Activity.class);
                 MainActivity.this.startActivity(i);
             }
         });
