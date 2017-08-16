@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.vmtung.example.CanvasAndPaint3Activity">
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <com.example.vmtung.example.RoundChart
+                android:layout_width="500dp"
+                android:layout_height="400dp"
+                android:id="@+id/exampleRoundChart"
+                custom:hintMarginLeft="50dp"
+                custom:textHintMarginTop="50dp"
+                custom:textHintDistanceBetweenAnother="30dp"
+                custom:chartMarginLeft = "30dp"
+                custom:chartRadius = "100dp"
+                custom:chartMarginTop = "40dp"
+                custom:textHintSize = "15sp"
+                custom:colorIconHintSize = "15sp"
+                custom:chartName = "@string/example_chart_name"
+                custom:chartNameMarginTop = "20dp"
+                custom:chartNameMarginLeft = "80dp"
+                custom:chartNameTextSize = "16sp"
+                >
 
-    <com.example.vmtung.example.RoundChart
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/exampleRoundChart"
-        custom:hintMarginLeft="50dp"
-        custom:textHintMarginTop="50dp"
-        custom:textHintDistanceBetweenAnother="30dp"
-        custom:chartMarginLeft = "30dp"
-        custom:chartRadius = "100dp"
-        custom:chartMarginTop = "40dp"
-        custom:textHintSize = "15sp"
-        custom:colorIconHintSize = "15sp"
-        custom:chartName = "@string/example_chart_name"
-        custom:chartNameMarginTop = "20dp"
-        custom:chartNameMarginLeft = "80dp"
-        custom:chartNameTextSize = "16sp"
-        >
-
-    </com.example.vmtung.example.RoundChart>
-
-</LinearLayout>
+            </com.example.vmtung.example.RoundChart>
+        </LinearLayout>
+    </HorizontalScrollView>
+</RelativeLayout>
