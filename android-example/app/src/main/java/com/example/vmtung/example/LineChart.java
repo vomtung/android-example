@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -26,26 +25,22 @@ public class LineChart extends View
     private Paint captionBottomPaint;
     private Paint chartNamePaint;
 
-    private float mTotal = 0.0f;
-    private float mTextHeight = 0.0f;
-    private float mHighlightStrength = 1.15f;
     private float captionMarginLeft = 0f;
-    private float textCaptionMarginTop = 0f;
-    private float textCaptionDistanceBetweenAnother = 0f;
     private float chartRadius = 0f;
     private float chartMarginTop = 0f;
-    private float textHintSize = 0f;
+    private float textValueAxisSize = 0f;
     private float colorIconHintSize = 0f;
     private float chartNameMarginTop = 0f;
     private float chartNameMarginLeft = 0f;
     private float chartNameTextSize = 0f;
-    private float marginLeftCaptionAndChart = 0f;
-    private float marginBottomCaptionAndChart = 0f;
+    private float marginLeftValueAndChart = 0f;
+    private float marginBottomYAxisAndChart = 0f;
     private float yAxisStepHeight;
     private float xAxisWidth =100;
     private float xAxisStepWidth = 0f;
     private float originPointX=0f;
     private float originPointY=0f;
+    private float lineStroke=0f;
     private String chartName ;
     private int maxYAxisValue;
     private int yAxisStepValue;
@@ -65,12 +60,10 @@ public class LineChart extends View
 
         try
         {
-            captionMarginLeft = a.getDimension(R.styleable.LineChart_captionMarginLeft, 0);
-            textCaptionMarginTop = a.getDimension(R.styleable.LineChart_textCaptionMarginTop, 0);
-            textCaptionDistanceBetweenAnother = a.getDimension(R.styleable.LineChart_textCaptionDistanceBetweenAnother, 0);
+            captionMarginLeft = a.getDimension(R.styleable.LineChart_xAxisValueMarginLeft, 0);
             chartRadius = a.getDimension(R.styleable.LineChart_chartRadius, 0);
             chartMarginTop = a.getDimension(R.styleable.LineChart_chartMarginTop, 0);
-            textHintSize = a.getDimension(R.styleable.LineChart_textCaptionSize, 0);
+            textValueAxisSize = a.getDimension(R.styleable.LineChart_textValueAxisSize, 0);
             colorIconHintSize = a.getDimension(R.styleable.LineChart_colorIconCaptionSize, 0);
             chartNameMarginTop = a.getDimension(R.styleable.LineChart_chartNameMarginTop, 0);
             chartNameMarginLeft = a.getDimension(R.styleable.LineChart_chartNameMarginLeft, 0);
@@ -80,8 +73,9 @@ public class LineChart extends View
             yAxisStepHeight = a.getDimension(R.styleable.LineChart_yAxisStepHeight, 0);
             xAxisStepWidth = a.getDimension(R.styleable.LineChart_xAxisStepWidth, 0);
             chartName = a.getString(R.styleable.LineChart_chartName);
-            marginLeftCaptionAndChart = a.getDimension(R.styleable.LineChart_marginLeftCaptionAndChart, 0);
-            marginBottomCaptionAndChart = a.getDimension(R.styleable.LineChart_marginBottomCaptionAndChart, 0);
+            marginLeftValueAndChart = a.getDimension(R.styleable.LineChart_marginLeftXAxisAndChart, 0);
+            marginBottomYAxisAndChart = a.getDimension(R.styleable.LineChart_marginBottomYAxisAndChart, 0);
+            lineStroke = a.getDimension(R.styleable.LineChart_lineStroke, 0);
 
         } finally {
             a.recycle();
@@ -102,7 +96,7 @@ public class LineChart extends View
         int numberOfStep = Math.round(maxYAxisValue/yAxisStepValue);
         float yAxisHeight = numberOfStep* yAxisStepHeight;
         originPointY = yAxisHeight+ chartMarginTop;
-        originPointX = captionMarginLeft+ marginLeftCaptionAndChart;
+        originPointX = captionMarginLeft+ marginLeftValueAndChart;
 
         for (int i = 0; i <= numberOfStep; i = i+ 1) {
             canvas.drawText(
@@ -120,7 +114,7 @@ public class LineChart extends View
             canvas.drawText(
                     xEntries[i],
                     originPointX + xAxisStepWidth*i,
-                    originPointY + marginBottomCaptionAndChart,
+                    originPointY + marginBottomYAxisAndChart,
                     captionBottomPaint
             );
         }
@@ -167,10 +161,9 @@ public class LineChart extends View
 
     void drawLine(Canvas canvas, LineChart.Item item, String[]xArrayEntries)
     {
-        Log.d("-DEBUG-","====drawLine===");
         Point previousPoint = null;
         Paint linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        linePaint.setStrokeWidth(6);
+        linePaint.setStrokeWidth(lineStroke);
         linePaint.setColor(item.getmColor());
 
         for (int i =0;i<xArrayEntries.length; i++)
@@ -262,12 +255,12 @@ public class LineChart extends View
 
     captionLeftPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     captionLeftPaint.setColor(Color.BLACK);
-    captionLeftPaint.setTextSize(textHintSize);
+    captionLeftPaint.setTextSize(textValueAxisSize);
     captionLeftPaint.setTextAlign(Paint.Align.RIGHT);
 
     captionBottomPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     captionBottomPaint.setColor(Color.BLACK);
-    captionBottomPaint.setTextSize(textHintSize);
+    captionBottomPaint.setTextSize(textValueAxisSize);
     captionBottomPaint.setTextAlign(Paint.Align.CENTER);
 
     chartNamePaint = new Paint(Paint.ANTI_ALIAS_FLAG);

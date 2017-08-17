@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="captionMarginLeft" format="dimension"/>
+    <attr name="xAxisValueMarginLeft" format="dimension"/>
     <attr name="textCaptionMarginTop" format="dimension"/>
+    <attr name="textValueAxisSize" format="dimension"/>
     <attr name="textCaptionDistanceBetweenAnother" format="dimension"/>
     <attr name="chartMarginLeft" format="dimension"/>
     <attr name="chartRadius" format="dimension"/>
@@ -53,13 +55,12 @@
         <attr name="chartName"/>
     </declare-styleable>
     <declare-styleable name="LineChart">
-        <attr name="captionMarginLeft" />
-        <attr name="textCaptionMarginTop"/>
+        <attr name="xAxisValueMarginLeft" />
         <attr name="textCaptionDistanceBetweenAnother"/>
         <attr name="chartMarginLeft"/>
         <attr name="chartRadius"/>
         <attr name="chartMarginTop" />
-        <attr name="textCaptionSize" />
+        <attr name="textValueAxisSize" />
         <attr name="colorIconCaptionSize" />
         <attr name="chartNameMarginTop" />
         <attr name="chartNameMarginLeft"/>
@@ -69,7 +70,8 @@
         <attr name="yAxisStepValue" format="integer"/>
         <attr name="yAxisStepHeight" format="dimension"/>
         <attr name="xAxisStepWidth" format="dimension"/>
-        <attr name="marginLeftCaptionAndChart" format="dimension"/>
-        <attr name="marginBottomCaptionAndChart" format="dimension"/>
+        <attr name="marginLeftXAxisAndChart" format="dimension"/>
+        <attr name="marginBottomYAxisAndChart" format="dimension"/>
+        <attr name="lineStroke" format="dimension"/>
     </declare-styleable>
 </resources>
