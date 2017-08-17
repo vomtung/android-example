@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.vmtung.example.CanvasAndPaint3Activity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <com.example.vmtung.example.LineChart
+                    android:layout_width="800dp"
+                    android:layout_height="800dp"
+                    android:id="@+id/exampleLineChart"
+                    custom:captionMarginLeft="50dp"
+                    custom:textCaptionMarginTop="50dp"
+                    custom:textCaptionDistanceBetweenAnother="30dp"
+                    custom:chartMarginLeft = "30dp"
+                    custom:chartRadius = "100dp"
+                    custom:chartMarginTop = "140dp"
+                    custom:textCaptionSize = "15sp"
+                    custom:colorIconCaptionSize = "15sp"
+                    custom:chartName = "@string/example_chart_name"
+                    custom:chartNameMarginTop = "20dp"
+                    custom:chartNameMarginLeft = "80dp"
+                    custom:chartNameTextSize = "16sp"
+                    custom:yAxisStepValue = "100"
+                    custom:maxYaxisValue = "1000"
+                    custom:yAxisStepHeight = "40dp"
+                    custom:xAxisStepWidth = "80dp"
+                    custom:marginLeftCaptionAndChart = "10dp"
+                    custom:marginBottomCaptionAndChart = "50dp"
+                    >
+
+                </com.example.vmtung.example.LineChart>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+</RelativeLayout>
+

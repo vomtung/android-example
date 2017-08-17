@@ -40,14 +40,14 @@ public class RoundChart extends View {
     private float mTotal = 0.0f;
     private float mTextHeight = 0.0f;
     private float mHighlightStrength = 1.15f;
-    private float hintMarginLeft = 0f;
-    private float textHintMarginTop = 0f;
-    private float textHintDistanceBetweenAnother = 0f;
+    private float captionMarginLeft = 0f;
+    private float textCaptionMarginTop = 0f;
+    private float textCaptionDistanceBetweenAnother = 0f;
     private float chartMarginLeft = 0f;
     private float chartRadius = 0f;
     private float chartMarginTop = 0f;
-    private float textHintSize = 0f;
-    private float colorIconHintSize = 0f;
+    private float textCaptionSize = 0f;
+    private float colorIconCaptionSize = 0f;
     private float chartNameMarginTop = 0f;
     private float chartNameMarginLeft = 0f;
     private float chartNameTextSize = 0f;
@@ -68,14 +68,14 @@ public class RoundChart extends View {
 
         try
         {
-            hintMarginLeft = a.getDimension(R.styleable.RoundChart_hintMarginLeft, 0);
-            textHintMarginTop = a.getDimension(R.styleable.RoundChart_textHintMarginTop, 0);
-            textHintDistanceBetweenAnother = a.getDimension(R.styleable.RoundChart_textHintDistanceBetweenAnother, 0);
+            captionMarginLeft = a.getDimension(R.styleable.RoundChart_captionMarginLeft, 0);
+            textCaptionMarginTop = a.getDimension(R.styleable.RoundChart_textCaptionMarginTop, 0);
+            textCaptionDistanceBetweenAnother = a.getDimension(R.styleable.RoundChart_textCaptionDistanceBetweenAnother, 0);
             chartMarginLeft = a.getDimension(R.styleable.RoundChart_chartMarginLeft, 0);
             chartRadius = a.getDimension(R.styleable.RoundChart_chartRadius, 0);
             chartMarginTop = a.getDimension(R.styleable.RoundChart_chartMarginTop, 0);
-            textHintSize = a.getDimension(R.styleable.RoundChart_textHintSize, 0);
-            colorIconHintSize = a.getDimension(R.styleable.RoundChart_colorIconHintSize, 0);
+            textCaptionSize = a.getDimension(R.styleable.RoundChart_textCaptionSize, 0);
+            colorIconCaptionSize = a.getDimension(R.styleable.RoundChart_colorIconCaptionSize, 0);
             chartNameMarginTop = a.getDimension(R.styleable.RoundChart_chartNameMarginTop, 0);
             chartNameMarginLeft = a.getDimension(R.styleable.RoundChart_chartNameMarginLeft, 0);
             chartNameTextSize = a.getDimension(R.styleable.RoundChart_chartNameTextSize, 0);
@@ -97,7 +97,7 @@ public class RoundChart extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        float mTextY = textHintMarginTop;
+        float mTextY = textCaptionMarginTop;
         float centerX = (mBounds.left + mBounds.right) / 2;
         float centerY = (mBounds.top + mBounds.bottom) / 2;
 
@@ -112,10 +112,10 @@ public class RoundChart extends View {
                     mPiePaint
             );
 
-            canvas.drawText(it.mLabel, mBounds.right+hintMarginLeft+ getContext().getResources().getDimension(R.dimen.circle_chart_hint_margin_left), mTextY, mTextPaint);
-            canvas.drawRect( mBounds.right+hintMarginLeft, mTextY - colorIconHintSize, mBounds.right+hintMarginLeft + colorIconHintSize, mTextY, mPiePaint);
+            canvas.drawText(it.mLabel, mBounds.right+captionMarginLeft+ getContext().getResources().getDimension(R.dimen.circle_chart_caption_margin_left), mTextY, mTextPaint);
+            canvas.drawRect( mBounds.right+captionMarginLeft, mTextY - colorIconCaptionSize, mBounds.right+captionMarginLeft + colorIconCaptionSize, mTextY, mPiePaint);
 
-            mTextY = mTextY+textHintDistanceBetweenAnother;
+            mTextY = mTextY+textCaptionDistanceBetweenAnother;
 
         }
 
@@ -202,7 +202,7 @@ public class RoundChart extends View {
 
         mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setColor(Color.BLACK);
-        mTextPaint.setTextSize(textHintSize);
+        mTextPaint.setTextSize(textCaptionSize);
 
         chartNamePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         chartNamePaint.setColor(Color.BLACK);

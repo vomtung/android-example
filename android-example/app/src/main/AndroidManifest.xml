@@ -29,7 +29,8 @@
         <activity android:name=".CustomViewActivity" />
         <activity android:name=".CanvasAndPaintExampleActivity" />
         <activity android:name=".CanvasAndPaint2Activity" />
-        <activity android:name=".CanvasAndPaint3Activity"></activity>
+        <activity android:name=".CanvasAndPaint3Activity" />
+        <activity android:name=".CanvasAndPaintExample4Activity"></activity>
     </application>
 
 </manifest>

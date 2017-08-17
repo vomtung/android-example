@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="captionMarginLeft" format="dimension"/>
+    <attr name="textCaptionMarginTop" format="dimension"/>
+    <attr name="textCaptionDistanceBetweenAnother" format="dimension"/>
+    <attr name="chartMarginLeft" format="dimension"/>
+    <attr name="chartRadius" format="dimension"/>
+    <attr name="chartMarginTop" format="dimension"/>
+    <attr name="textCaptionSize" format="dimension"/>
+    <attr name="colorIconCaptionSize" format="dimension"/>
+    <attr name="chartNameMarginTop" format="dimension"/>
+    <attr name="chartNameMarginLeft" format="dimension"/>
+    <attr name="chartNameTextSize" format="dimension"/>
+    <attr name="chartName" format="string"/>
     <declare-styleable name="ColorOptionsView">
         <attr name="titleText" format="string" localization="suggested" />
         <attr name="valueColor" format="color" />
@@ -27,18 +39,37 @@
         <attr name="showText" format="boolean"/>
     </declare-styleable>
     <declare-styleable name="RoundChart">
-        <attr name="hintMarginLeft" format="dimension"/>
-        <attr name="textHintMarginTop" format="dimension"/>
-        <attr name="textHintDistanceBetweenAnother" format="dimension"/>
-        <attr name="chartMarginLeft" format="dimension"/>
-        <attr name="chartRadius" format="dimension"/>
-        <attr name="chartMarginTop" format="dimension"/>
-        <attr name="textHintSize" format="dimension"/>
-        <attr name="colorIconHintSize" format="dimension"/>
-        <attr name="chartNameMarginTop" format="dimension"/>
-        <attr name="chartNameMarginLeft" format="dimension"/>
-        <attr name="chartNameTextSize" format="dimension"/>
-        <attr name="chartName" format="string"/>
+        <attr name="captionMarginLeft" />
+        <attr name="textCaptionMarginTop"/>
+        <attr name="textCaptionDistanceBetweenAnother"/>
+        <attr name="chartMarginLeft"/>
+        <attr name="chartRadius"/>
+        <attr name="chartMarginTop"/>
+        <attr name="textCaptionSize" />
+        <attr name="colorIconCaptionSize" />
+        <attr name="chartNameMarginTop" />
+        <attr name="chartNameMarginLeft"/>
+        <attr name="chartNameTextSize"/>
+        <attr name="chartName"/>
     </declare-styleable>
-
+    <declare-styleable name="LineChart">
+        <attr name="captionMarginLeft" />
+        <attr name="textCaptionMarginTop"/>
+        <attr name="textCaptionDistanceBetweenAnother"/>
+        <attr name="chartMarginLeft"/>
+        <attr name="chartRadius"/>
+        <attr name="chartMarginTop" />
+        <attr name="textCaptionSize" />
+        <attr name="colorIconCaptionSize" />
+        <attr name="chartNameMarginTop" />
+        <attr name="chartNameMarginLeft"/>
+        <attr name="chartNameTextSize"/>
+        <attr name="chartName"/>
+        <attr name="maxYaxisValue" format="integer"/>
+        <attr name="yAxisStepValue" format="integer"/>
+        <attr name="yAxisStepHeight" format="dimension"/>
+        <attr name="xAxisStepWidth" format="dimension"/>
+        <attr name="marginLeftCaptionAndChart" format="dimension"/>
+        <attr name="marginBottomCaptionAndChart" format="dimension"/>
+    </declare-styleable>
 </resources>
