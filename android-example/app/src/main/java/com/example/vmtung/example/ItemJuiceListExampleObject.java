@@ -24,8 +24,6 @@ public class ItemJuiceListExampleObject implements Serializable
 
     @Override
     public String toString() {
-        return "ItemJuiceListExampleObject[" +
-                "name='" + name + '\'' +
-                ']';
+        return name;
     }
 }
