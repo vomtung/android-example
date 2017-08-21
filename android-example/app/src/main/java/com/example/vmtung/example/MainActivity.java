@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Button canvasButton2 = (Button)findViewById(R.id.canvasButton2);
         Button canvasButton3 = (Button)findViewById(R.id.canvasButton3);
         Button canvasButton4 = (Button)findViewById(R.id.canvasButton4);
+        Button listViewButton = (Button)findViewById(R.id.listViewButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,10 +110,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        canvasButton4.setOnClickListener(new View.OnClickListener() {
+        listViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, CanvasAndPaintExample4Activity.class);
+                Intent i = new Intent(MainActivity.this, ListViewActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });

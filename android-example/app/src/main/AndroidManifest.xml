@@ -30,7 +30,11 @@
         <activity android:name=".CanvasAndPaintExampleActivity" />
         <activity android:name=".CanvasAndPaint2Activity" />
         <activity android:name=".CanvasAndPaint3Activity" />
-        <activity android:name=".CanvasAndPaintExample4Activity"></activity>
+        <activity android:name=".CanvasAndPaintExample4Activity" />
+        <activity
+            android:name=".ListViewActivity"
+            android:label="@string/title_activity_list_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
