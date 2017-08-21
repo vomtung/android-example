@@ -60,7 +60,9 @@ public class ListViewActivity extends AppCompatActivity {
 
                 result = "firstVisibleItem:"+firstVisibleItem.toString() +",index:"+i+"\n"
                         +"visibleItemCount:"+i1 +"\n"
-                        +"totalItemCount:"+i2 +"\n";
+                        +"totalItemCount:"+i2 +"\n"
+                        +"is end(bottom) of list:"+((i+i1==i2)?"TRUE":"FALSE") +"\n";
+
                 logEditText.setText(result);
 
             }
