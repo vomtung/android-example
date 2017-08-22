@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, CanvasAndPaintExampleActivity.class);
+                Intent i = new Intent(MainActivity.this, CanvasAndPaintActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });
@@ -114,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //
-                Intent i = new Intent(MainActivity.this, CanvasAndPaintExample4Activity.class);
+                Intent i = new Intent(MainActivity.this, CanvasAndPaint4Activity.class);
                 MainActivity.this.startActivity(i);
             }
         });

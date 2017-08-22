@@ -27,14 +27,15 @@
         <activity android:name=".AlerDialogExampleActivity" />
         <activity android:name=".CompoundViewActivity" />
         <activity android:name=".CustomViewActivity" />
-        <activity android:name=".CanvasAndPaintExampleActivity" />
+        <activity android:name=".CanvasAndPaintActivity" />
         <activity android:name=".CanvasAndPaint2Activity" />
         <activity android:name=".CanvasAndPaint3Activity" />
-        <activity android:name=".CanvasAndPaintExample4Activity" />
+        <activity android:name=".CanvasAndPaint4Activity" />
         <activity
             android:name=".ListViewActivity"
             android:label="@string/title_activity_list_view"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CanvasAndPaint5Activity"></activity>
     </application>
 
 </manifest>

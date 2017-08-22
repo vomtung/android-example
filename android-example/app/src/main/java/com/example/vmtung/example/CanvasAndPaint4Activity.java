@@ -7,7 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CanvasAndPaintExample4Activity extends AppCompatActivity {
+public class CanvasAndPaint4Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

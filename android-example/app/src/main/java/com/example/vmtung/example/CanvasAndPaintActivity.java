@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class CanvasAndPaintExampleActivity extends AppCompatActivity {
+public class CanvasAndPaintActivity extends AppCompatActivity {
 
     DrawingView dv ;
     private Paint mPaint;
