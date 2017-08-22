@@ -110,6 +110,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        canvasButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //
+                Intent i = new Intent(MainActivity.this, CanvasAndPaintExample4Activity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
         listViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
