@@ -222,6 +222,7 @@
     <string name="canvas_and_paint_example_2">Canvas and Paint example 2</string>
     <string name="canvas_and_paint_example_3">Canvas and Paint example 3</string>
     <string name="canvas_and_paint_example_4">Canvas and Paint example 4</string>
+    <string name="canvas_and_paint_example_5">Canvas and Paint example 5</string>
     <string name="example_chart_name">Example Chart Name</string>
     <string name="list_view_example">List View Example</string>
     <string name="title_activity_list_view">ListViewActivity</string>

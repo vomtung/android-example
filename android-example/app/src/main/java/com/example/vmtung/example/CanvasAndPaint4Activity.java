@@ -12,7 +12,7 @@ public class CanvasAndPaint4Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_canvas_and_paint_example4);
+        setContentView(R.layout.activity_canvas_and_paint_4);
 
         final LineChart chart = (LineChart) this.findViewById(R.id.exampleLineChart);
         //chart.addItem("Agamemnon", 2, ContextCompat.getColor(this,R.color.blue));

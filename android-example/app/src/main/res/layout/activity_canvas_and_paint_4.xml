@@ -35,8 +35,8 @@
                     custom:maxYaxisValue = "1000"
                     custom:yAxisStepHeight = "40dp"
                     custom:xAxisStepWidth = "80dp"
-                    custom:marginLeftXAxisAndChart = "10dp"
-                    custom:marginBottomYAxisAndChart = "50dp"
+                    custom:marginLeftYAxisAndChart = "10dp"
+                    custom:marginBottomXAxisAndChart = "50dp"
                     custom:lineStroke = "5dp"
                     >
 

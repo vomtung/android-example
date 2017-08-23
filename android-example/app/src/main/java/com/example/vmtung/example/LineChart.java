@@ -45,7 +45,6 @@ public class LineChart extends View
     private int maxYAxisValue;
     private int yAxisStepValue;
 
-    private CharSequence[] xArrayEntries;
     private String[]xEntries;
 
     public LineChart(Context context, @Nullable AttributeSet attrs) {
@@ -73,8 +72,8 @@ public class LineChart extends View
             yAxisStepHeight = a.getDimension(R.styleable.LineChart_yAxisStepHeight, 0);
             xAxisStepWidth = a.getDimension(R.styleable.LineChart_xAxisStepWidth, 0);
             chartName = a.getString(R.styleable.LineChart_chartName);
-            marginLeftValueAndChart = a.getDimension(R.styleable.LineChart_marginLeftXAxisAndChart, 0);
-            marginBottomYAxisAndChart = a.getDimension(R.styleable.LineChart_marginBottomYAxisAndChart, 0);
+            marginLeftValueAndChart = a.getDimension(R.styleable.LineChart_marginLeftYAxisAndChart, 0);
+            marginBottomYAxisAndChart = a.getDimension(R.styleable.LineChart_marginBottomXAxisAndChart, 0);
             lineStroke = a.getDimension(R.styleable.LineChart_lineStroke, 0);
 
         } finally {

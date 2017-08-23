@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vmtung.example.CanvasAndPaint5Activity">
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.vmtung.example.CanvasAndPaint3Activity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-</android.support.constraint.ConstraintLayout>
+                <com.example.vmtung.example.ColumnChart1
+                    android:layout_width="800dp"
+                    android:layout_height="800dp"
+                    android:id="@+id/exampleColumnChart"
+                    custom:xAxisValueMarginLeft="50dp"
+                    custom:chartMarginLeft = "30dp"
+                    custom:chartRadius = "100dp"
+                    custom:chartMarginTop = "140dp"
+                    custom:textValueAxisSize = "15sp"
+                    custom:colorIconCaptionSize = "16sp"
+                    custom:chartName = "@string/example_chart_name"
+                    custom:chartNameMarginTop = "20dp"
+                    custom:chartNameMarginLeft = "80dp"
+                    custom:chartNameTextSize = "16sp"
+                    custom:yAxisStepValue = "100"
+                    custom:maxYaxisValue = "1000"
+                    custom:yAxisStepHeight = "40dp"
+                    custom:xAxisStepWidth = "150dp"
+                    custom:marginLeftYAxisAndChart = "40dp"
+                    custom:marginBottomXAxisAndChart = "50dp"
+                    custom:lineStroke = "5dp"
+                    custom:marginBetweenColumn = "30dp"
+                    >
+
+                </com.example.vmtung.example.ColumnChart1>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+</RelativeLayout>
+

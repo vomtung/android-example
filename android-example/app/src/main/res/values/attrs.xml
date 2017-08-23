@@ -13,7 +13,13 @@
     <attr name="chartNameMarginTop" format="dimension"/>
     <attr name="chartNameMarginLeft" format="dimension"/>
     <attr name="chartNameTextSize" format="dimension"/>
+    <attr name="lineStroke" format="dimension"/>
     <attr name="chartName" format="string"/>
+    <attr name="maxYaxisValue" format="integer"/>
+    <attr name="yAxisStepHeight" format="dimension"/>
+    <attr name="xAxisStepWidth" format="dimension"/>
+    <attr name="marginLeftYAxisAndChart" format="dimension"/>
+    <attr name="marginBottomXAxisAndChart" format="dimension"/>
     <declare-styleable name="ColorOptionsView">
         <attr name="titleText" format="string" localization="suggested" />
         <attr name="valueColor" format="color" />
@@ -66,12 +72,33 @@
         <attr name="chartNameMarginLeft"/>
         <attr name="chartNameTextSize"/>
         <attr name="chartName"/>
-        <attr name="maxYaxisValue" format="integer"/>
+        <attr name="maxYaxisValue" />
         <attr name="yAxisStepValue" format="integer"/>
-        <attr name="yAxisStepHeight" format="dimension"/>
-        <attr name="xAxisStepWidth" format="dimension"/>
-        <attr name="marginLeftXAxisAndChart" format="dimension"/>
-        <attr name="marginBottomYAxisAndChart" format="dimension"/>
-        <attr name="lineStroke" format="dimension"/>
+        <attr name="yAxisStepHeight" />
+        <attr name="xAxisStepWidth" />
+        <attr name="marginLeftYAxisAndChart" />
+        <attr name="marginBottomXAxisAndChart"/>
+        <attr name="lineStroke"/>
+    </declare-styleable>
+    <declare-styleable name="ColumnChart">
+        <attr name="xAxisValueMarginLeft" />
+        <attr name="textCaptionDistanceBetweenAnother"/>
+        <attr name="chartMarginLeft"/>
+        <attr name="chartRadius"/>
+        <attr name="chartMarginTop" />
+        <attr name="textValueAxisSize" />
+        <attr name="colorIconCaptionSize" />
+        <attr name="chartNameMarginTop" />
+        <attr name="chartNameMarginLeft"/>
+        <attr name="chartNameTextSize"/>
+        <attr name="chartName"/>
+        <attr name="lineStroke"/>
+        <attr name="maxYaxisValue"/>
+        <attr name="yAxisStepValue"/>
+        <attr name="yAxisStepHeight" />
+        <attr name="xAxisStepWidth"/>
+        <attr name="marginLeftYAxisAndChart" />
+        <attr name="marginBottomXAxisAndChart"/>
+        <attr name="marginBetweenColumn" format="dimension"/>
     </declare-styleable>
 </resources>
