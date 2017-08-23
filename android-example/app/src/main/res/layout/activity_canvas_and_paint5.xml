@@ -40,6 +40,7 @@
                     custom:marginBottomXAxisAndChart = "50dp"
                     custom:lineStroke = "5dp"
                     custom:marginBetweenColumn = "30dp"
+                    custom:columnWidth = "30dp"
                     >
 
                 </com.example.vmtung.example.ColumnChart1>

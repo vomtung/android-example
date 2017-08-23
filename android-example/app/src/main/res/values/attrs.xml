@@ -100,5 +100,6 @@
         <attr name="marginLeftYAxisAndChart" />
         <attr name="marginBottomXAxisAndChart"/>
         <attr name="marginBetweenColumn" format="dimension"/>
+        <attr name="columnWidth" format="dimension"/>
     </declare-styleable>
 </resources>

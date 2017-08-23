@@ -43,6 +43,7 @@ public class ColumnChart1 extends View
     private float originPointY=0f;
     private float lineStroke=0f;
     private float marginBetweenColumn;
+    private float columnWidth;
     private String chartName ;
     private int maxYAxisValue;
     private int yAxisStepValue;
@@ -76,6 +77,8 @@ public class ColumnChart1 extends View
             marginBottomXAxisAndChart = a.getDimension(R.styleable.ColumnChart_marginBottomXAxisAndChart, 0);
             lineStroke = a.getDimension(R.styleable.ColumnChart_lineStroke, 0);
             marginBetweenColumn = a.getDimension(R.styleable.ColumnChart_marginBetweenColumn, 0);
+            marginBetweenColumn = a.getDimension(R.styleable.ColumnChart_marginBetweenColumn, 0);
+            columnWidth = a.getDimension(R.styleable.ColumnChart_columnWidth, 0);
 
         } finally {
             a.recycle();
@@ -217,7 +220,7 @@ public class ColumnChart1 extends View
     void drawColumn(Canvas canvas, ColumnChart1.Item item, String[]xArrayEntries, int columnIndex)
     {
         Paint linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        linePaint.setStrokeWidth(100);
+        linePaint.setStrokeWidth(columnWidth);
         linePaint.setColor(item.getmColor());
 
         for (int i =0;i<xArrayEntries.length; i++)
