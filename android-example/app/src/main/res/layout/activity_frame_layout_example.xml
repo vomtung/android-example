@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kieuanh_hera"
+    android:background="@drawable/ic_fall"
     android:orientation="vertical"
     android:id="@+id/linearLayout"
     tools:context="com.example.vmtung.example.FrameLayoutExampleActivity">

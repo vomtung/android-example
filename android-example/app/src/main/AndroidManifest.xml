@@ -35,7 +35,15 @@
             android:name=".ListViewActivity"
             android:label="@string/title_activity_list_view"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CanvasAndPaint5Activity"></activity>
+        <activity android:name=".CanvasAndPaint5Activity" />
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScrollingActivity2"
+            android:label="@string/title_activity_scrolling2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
