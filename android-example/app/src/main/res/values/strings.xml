@@ -320,4 +320,6 @@
     <string name="scrolling_activity2">Scrolling Activity 2</string>
     <string name="title_activity_scrolling2">ScrollingActivity2</string>
     <string name="change_password">Change Password</string>
+    <string name="dynamic_add_view">Dynamic add view</string>
+    <string name="add_new_view">add new view</string>
 </resources>

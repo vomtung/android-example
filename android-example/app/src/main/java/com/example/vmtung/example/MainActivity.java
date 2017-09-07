@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         Button canvasButton5 = (Button)findViewById(R.id.canvasButton5);
         Button listViewButton = (Button)findViewById(R.id.listViewButton);
         Button animationButton = (Button)findViewById(R.id.animationButton);
-        Button ScrollingActivity2Button = (Button)findViewById(R.id.ScrollingActivity2Button);
+        Button scrollingActivity2Button = (Button)findViewById(R.id.ScrollingActivity2Button);
+        Button dynamicAddViewButton = (Button)findViewById(R.id.dynamicAddViewButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,10 +146,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ScrollingActivity2Button.setOnClickListener(new View.OnClickListener() {
+        scrollingActivity2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ScrollingActivity2.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        dynamicAddViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DynamicAddViewActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });
