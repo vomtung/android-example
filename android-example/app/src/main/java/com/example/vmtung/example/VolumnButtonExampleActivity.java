@@ -30,6 +30,7 @@ public class VolumnButtonExampleActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+        super.onKeyDown(keyCode,event);
         switch (keyCode) {
             case KeyEvent.KEYCODE_VOLUME_DOWN:
                 consoleEditText.append("KeyEvent.KEYCODE_VOLUME_DOWN" + "\n");
