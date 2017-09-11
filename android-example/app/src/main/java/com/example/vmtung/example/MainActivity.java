@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         Button animationButton = (Button)findViewById(R.id.animationButton);
         Button scrollingActivity2Button = (Button)findViewById(R.id.ScrollingActivity2Button);
         Button dynamicAddViewButton = (Button)findViewById(R.id.dynamicAddViewButton);
+        Button takePhotoWithContentProvider = (Button)findViewById(R.id.takePhotoWithContentProvider);
+        Button volumeButtonExample = (Button)findViewById(R.id.volumeButtonExample);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +160,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, DynamicAddViewActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        takePhotoWithContentProvider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, TakePhotoWithContentProviderActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        volumeButtonExample.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, VolumnButtonExampleActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });
