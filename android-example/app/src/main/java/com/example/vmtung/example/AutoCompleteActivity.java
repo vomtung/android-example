@@ -29,6 +29,12 @@ public class AutoCompleteActivity extends AppCompatActivity {
             "England",
             "China",
             "Vietnam",
+            "Spain",
+            "Panama",
+            "Canada",
+            "Taiwan",
+            "Singapore",
+            "Italy",
 
 
     };
@@ -124,6 +130,30 @@ public class AutoCompleteActivity extends AppCompatActivity {
         else if(nation.equals(COUNTRIES[13]))
         {
             flag.setImageResource(R.drawable.ic_vietnam_flag);
+        }
+        else if(nation.equals(COUNTRIES[14]))
+        {
+            flag.setImageResource(R.drawable.ic_spain_flag);
+        }
+        else if(nation.equals(COUNTRIES[15]))
+        {
+            flag.setImageResource(R.drawable.ic_panama_flag);
+        }
+        else if(nation.equals(COUNTRIES[16]))
+        {
+            flag.setImageResource(R.drawable.ic_canada_flag);
+        }
+        else if(nation.equals(COUNTRIES[17]))
+        {
+            flag.setImageResource(R.drawable.ic_taiwan_flag);
+        }
+        else if(nation.equals(COUNTRIES[18]))
+        {
+            flag.setImageResource(R.drawable.ic_singapore_flag);
+        }
+        else if(nation.equals(COUNTRIES[19]))
+        {
+            flag.setImageResource(R.drawable.ic_italy_flag);
         }
     }
 }
