@@ -48,7 +48,12 @@
             android:name=".DynamicAddViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TakePhotoWithContentProviderActivity" />
-        <activity android:name=".VolumnButtonExampleActivity"></activity>
+        <activity android:name=".VolumnButtonExampleActivity" />
+        <activity
+            android:name=".CollapsingToolbarLayoutActivity"
+            android:label="@string/title_activity_collapsing_toolbar_layout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AutoCompleteActivity"></activity>
     </application>
 
 </manifest>

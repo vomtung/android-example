@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         Button dynamicAddViewButton = (Button)findViewById(R.id.dynamicAddViewButton);
         Button takePhotoWithContentProvider = (Button)findViewById(R.id.takePhotoWithContentProvider);
         Button volumeButtonExample = (Button)findViewById(R.id.volumeButtonExample);
+        Button collapsingToolbarLayoutButton = (Button)findViewById(R.id.collapsingToolbarLayoutButton);
+        Button autocompleteButton = (Button)findViewById(R.id.autocompleteButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,6 +178,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, VolumnButtonExampleActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        collapsingToolbarLayoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CollapsingToolbarLayoutActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        autocompleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, AutoCompleteActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });
