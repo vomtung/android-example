@@ -35,6 +35,7 @@ public class AutoCompleteActivity extends AppCompatActivity {
             "Taiwan",
             "Singapore",
             "Italy",
+            "Korea",
 
 
     };
@@ -154,6 +155,10 @@ public class AutoCompleteActivity extends AppCompatActivity {
         else if(nation.equals(COUNTRIES[19]))
         {
             flag.setImageResource(R.drawable.ic_italy_flag);
+        }
+        else if(nation.equals(COUNTRIES[20]))
+        {
+            flag.setImageResource(R.drawable.ic_korea_flag);
         }
     }
 }
