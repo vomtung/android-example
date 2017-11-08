@@ -37,7 +37,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CanvasAndPaint5Activity" />
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".CollapsingToolbarLayout3ButtonActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
