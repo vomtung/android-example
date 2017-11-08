@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Button takePhotoWithContentProvider = (Button)findViewById(R.id.takePhotoWithContentProvider);
         Button volumeButtonExample = (Button)findViewById(R.id.volumeButtonExample);
         Button collapsingToolbarLayoutButton = (Button)findViewById(R.id.collapsingToolbarLayoutButton);
+        Button collapsingToolbarLayout2Button = (Button)findViewById(R.id.collapsingToolbarLayout2Button);
         Button autocompleteButton = (Button)findViewById(R.id.autocompleteButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
@@ -186,6 +187,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, CollapsingToolbarLayoutActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        collapsingToolbarLayout2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, CollapsingToolbarLayout3Activity.class);
                 MainActivity.this.startActivity(i);
             }
         });

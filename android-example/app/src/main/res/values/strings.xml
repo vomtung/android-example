@@ -328,6 +328,7 @@
     <string name="volume_button_example">Volume button example</string>
     <string name="press_volumn_up_button_or_press_volume_down_button_to_see_effect">Press volumn up button or press volume down button to see effect</string>
     <string name="collapsingToolbarLayout">CollapsingToolbarLayout</string>
+    <string name="collapsingToolbar2Layout">CollapsingToolbar 2 Layout</string>
     <string name="title_activity_collapsing_toolbar_layout">CollapsingToolbarLayoutActivity</string>
     <string name="autocomplete">autocomplete</string>
 
