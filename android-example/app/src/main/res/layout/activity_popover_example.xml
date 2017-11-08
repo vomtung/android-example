@@ -57,7 +57,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/startPopoverShadow"
+        android:id="@+id/startPopoverShadowButton"
         android:text="start Popover with Shadow and full Bottom"
         android:layout_marginTop="20dp"
         android:background="#FF1199"

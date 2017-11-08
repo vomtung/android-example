@@ -38,8 +38,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/frameLayoutButton"
-                android:text="@string/frame_layout_example"
+                android:id="@+id/eventOrderButton"
+                android:text="@string/event_order_android"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

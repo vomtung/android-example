@@ -6,7 +6,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +35,7 @@ public class PopoverExampleActivity extends AppCompatActivity {
         final View filterDialogLayoutShadow = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_example, null);
         final View filterDialogDarkMaskLayout = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_dark_mask_view, null);
         final View dialogMadrginLayout= layoutInflater.inflate(R.layout.dialog_popupwindow_popover_margin, null);
-        final Button startPopoverShadow = (Button)findViewById(R.id.startPopoverShadow);
+        final Button startPopoverShadowButton = (Button)findViewById(R.id.startPopoverShadowButton);
 
         final PopupWindow popupWindow = new PopupWindow(filterDialogLayoutShadow,
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -122,10 +121,10 @@ public class PopoverExampleActivity extends AppCompatActivity {
             }
         });
 
-        startPopoverShadow.setOnClickListener(new View.OnClickListener() {
+        startPopoverShadowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pwindow.showAsDropDown(startPopoverShadow);
+                pwindow.showAsDropDown(startPopoverShadowButton);
             }
         });
     }

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button popoverButton = (Button)findViewById(R.id.popoverButton);
         Button menuButton = (Button)findViewById(R.id.menuButton);
-        Button frameLayoutButton = (Button)findViewById(R.id.frameLayoutButton);
+        Button eventOrderButton = (Button)findViewById(R.id.eventOrderButton);
         Button spinnerExampleButton = (Button)findViewById(R.id.spinnerExampleButton);
         Button alertDialogExampleButton = (Button)findViewById(R.id.alertDialogExampleButton);
         Button compundViewButton = (Button)findViewById(R.id.compundViewButton);
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        frameLayoutButton.setOnClickListener(new View.OnClickListener() {
+        eventOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, FrameLayoutExampleActivity.class);
+                Intent i = new Intent(MainActivity.this, EventOrderExampleActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });

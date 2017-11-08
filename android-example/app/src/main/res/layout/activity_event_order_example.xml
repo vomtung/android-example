@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/frameLayout"
+    tools:context="com.example.vmtung.example.EventOrderExampleActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LinearLayout"
+                />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/relativeLayout"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="#9575CD"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="RelativeLayout"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clickMeButton"
+                android:text="@string/click_me"
+                android:background="#EDE7F6"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/logEditText"
+            android:background="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/green"
+            android:gravity="top"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logClearButton"
+            android:text="clear"
+            android:background="@color/green"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remember that hardware key events are always delivered to the
+             View currently in focus. They are dispatched starting from the top of the
+             View hierarchy, and then down, until they reach the appropriate destination.
+              If your View (or a child of your View) currently has focus,
+             then you can see the event travel through the dispatchKeyEvent() method. "
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="500dp"
+                android:layout_height="500dp"
+                android:src="@drawable/ic_event_order_1"
+                />
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="500dp"
+                    android:layout_height="500dp"
+                    android:src="@drawable/ic_event_order_2"
+                    />
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

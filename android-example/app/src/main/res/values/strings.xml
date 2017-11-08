@@ -190,6 +190,7 @@
     <string name="right_menu">Right Menu</string>
     <string name="window_popup_menu">Window Popup Menu</string>
     <string name="frame_layout_example">Frame Layout Example</string>
+    <string name="event_order_android">Event Order Android</string>
     <string name="order_event_view">Order Event View</string>
     <string name="click_me">Click me</string>
     <string name="date">Date</string>

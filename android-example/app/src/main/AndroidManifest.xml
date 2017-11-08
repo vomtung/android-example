@@ -22,7 +22,7 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".FrameLayoutExampleActivity" />
+        <activity android:name=".EventOrderExampleActivity" />
         <activity android:name=".SpinnerActivity" />
         <activity android:name=".AlerDialogExampleActivity" />
         <activity android:name=".CompoundViewActivity" />
