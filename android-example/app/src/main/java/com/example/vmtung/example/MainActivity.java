@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         collapsingToolbarLayout2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, CollapsingToolbarLayout3Activity.class);
+                Intent i = new Intent(MainActivity.this, CollapsingToolbarLayout2Activity.class);
                 MainActivity.this.startActivity(i);
             }
         });

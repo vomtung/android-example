@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
 
-public class CollapsingToolbarLayout3Activity extends AppCompatActivity {
+public class CollapsingToolbarLayout2Activity extends AppCompatActivity {
 
     private AppBarLayout containerAppBarLayout;
     private TabLayout tabLayoutMyProfile;
