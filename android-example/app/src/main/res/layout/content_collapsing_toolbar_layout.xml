@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.vmtung.example.CollapsingToolbarLayoutActivity"
-    tools:showIn="@layout/activity_collapsing_toolbar_layout2">
+    tools:showIn="@layout/activity_collapsing_toolbar_layout">
 
     <TextView
         android:layout_width="wrap_content"

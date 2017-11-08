@@ -16,7 +16,7 @@ public class CollapsingToolbarLayout3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collapsing_toolbar_layout3);
+        setContentView(R.layout.activity_collapsing_toolbar_layout2);
 
         containerAppBarLayout = (AppBarLayout) findViewById(R.id.containerAppBarLayout);
         tabLayoutMyProfile = (TabLayout) findViewById(R.id.tabLayoutMyProfile);
