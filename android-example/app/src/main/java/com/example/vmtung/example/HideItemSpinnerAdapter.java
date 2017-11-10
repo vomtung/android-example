@@ -2,10 +2,8 @@ package com.example.vmtung.example;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +17,11 @@ import java.util.Collection;
  * Created by vmtung on 24/10/2017.
  */
 
-public class ComplexSpinnerAdapter extends ArrayAdapter<CountryDto> {
+public class HideItemSpinnerAdapter extends ArrayAdapter<CountryDto> {
 
     private LayoutInflater inflater;
 
-    public ComplexSpinnerAdapter(@NonNull Context context, @LayoutRes int resource) {
+    public HideItemSpinnerAdapter(@NonNull Context context, @LayoutRes int resource) {
         super(context, resource);
         inflater = ((Activity)context).getLayoutInflater();
     }
@@ -38,7 +36,7 @@ public class ComplexSpinnerAdapter extends ArrayAdapter<CountryDto> {
         TextView countryNameTextView = (TextView) rowview.findViewById(R.id.countryNameTextView);
         TextView countryCodeTextView = (TextView) rowview.findViewById(R.id.countryCodeTextView);
 
-        flagImageView.setImageDrawable(rowItem.getFlagDrawable());
+        flagImageView.setImageDrawable(this.getContext().getResources().getDrawable(R.drawable.ic_america_flag));
         countryNameTextView.setText(rowItem.getName());
         countryCodeTextView.setText(rowItem.getCode());
 
@@ -48,6 +46,12 @@ public class ComplexSpinnerAdapter extends ArrayAdapter<CountryDto> {
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent)
     {
+        if(position ==0 ||position ==1)
+        {
+            View viewIteam = new View(this.getContext());
+            viewIteam.setVisibility(View.GONE);
+            return viewIteam;
+        }
         CountryDto rowItem = getItem(position);
         View rowview = inflater.inflate(R.layout.spinner_country_complex_adapter_layout, null, true);
 

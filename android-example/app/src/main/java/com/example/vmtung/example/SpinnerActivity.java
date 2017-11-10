@@ -23,7 +23,8 @@ public class SpinnerActivity extends AppCompatActivity {
         final Spinner juiceSpinner = (Spinner)findViewById(R.id.juiceSpinner);
         final Spinner countrySpinner = new Spinner(this, Spinner.MODE_DIALOG);
         final Button countrySpinnerButton =(Button)findViewById(R.id.countrySpinnerButton);
-        final Spinner compleCountrySpinner =(Spinner)findViewById(R.id.compleCountrySpinner);
+        final Spinner complexCountrySpinner =(Spinner)findViewById(R.id.complexCountrySpinner);
+        final Spinner hideItemSpinner =(Spinner)findViewById(R.id.hideItemSpinner);
         LinearLayout countryContainerLinearLayout = (LinearLayout)findViewById(R.id.countryContainerLinearLayout);
 
         final ArrayAdapter locationSpinnerAdapter = ArrayAdapter.createFromResource(
@@ -93,6 +94,27 @@ public class SpinnerActivity extends AppCompatActivity {
 
         ComplexSpinnerAdapter complexSpinerAdapter = new ComplexSpinnerAdapter(SpinnerActivity.this, R.layout.spinner_country_complex_adapter_layout);
         complexSpinerAdapter.addAll(complexCountryDto);
-        compleCountrySpinner.setAdapter(complexSpinerAdapter);
+        complexCountrySpinner.setAdapter(complexSpinerAdapter);
+
+        /**
+         * Hide item Spinner
+         */
+        List<CountryDto> hideItemDto = new ArrayList<CountryDto>();
+
+        CountryDto america2 = new CountryDto(0L, "America", "us", this.getResources().getDrawable(R.drawable.ic_america_flag));
+        CountryDto china2 = new CountryDto(1L, "China", "cn", this.getResources().getDrawable(R.drawable.ic_china_flag));
+        CountryDto japan2 = new CountryDto(2L, "Japan", "jp", this.getResources().getDrawable(R.drawable.ic_japan_flag));
+        CountryDto russia2 = new CountryDto(3L, "Russia", "rs", this.getResources().getDrawable(R.drawable.ic_russia_flag));
+        CountryDto england2 = new CountryDto(4L, "England", "en", this.getResources().getDrawable(R.drawable.ic_england_flag));
+
+        hideItemDto.add(america2);
+        hideItemDto.add(china2);
+        hideItemDto.add(japan2);
+        hideItemDto.add(russia2);
+        hideItemDto.add(england2);
+
+        HideItemSpinnerAdapter hideItemSpinerAdapter = new HideItemSpinnerAdapter(SpinnerActivity.this, R.layout.spinner_country_complex_adapter_layout);
+        hideItemSpinerAdapter.addAll(hideItemDto);
+        hideItemSpinner.setAdapter(hideItemSpinerAdapter);
     }
 }

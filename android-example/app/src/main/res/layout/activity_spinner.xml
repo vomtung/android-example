@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.vmtung.example.SpinnerActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="android:spinnerMode=dialog|dropdown"
+        />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,10 +32,29 @@
         android:id="@+id/countryContainerLinearLayout"
         >
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="we can place image, text, etc v.v... inside spinner item."
+        />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/compleCountrySpinner"
+        android:id="@+id/complexCountrySpinner"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        >
+    </Spinner>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data have 5 item. But we only show 3. "
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hideItemSpinner"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         >
