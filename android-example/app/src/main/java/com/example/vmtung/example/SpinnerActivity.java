@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SpinnerActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class SpinnerActivity extends AppCompatActivity {
         final Spinner juiceSpinner = (Spinner)findViewById(R.id.juiceSpinner);
         final Spinner countrySpinner = new Spinner(this, Spinner.MODE_DIALOG);
         final Button countrySpinnerButton =(Button)findViewById(R.id.countrySpinnerButton);
+        final Spinner compleCountrySpinner =(Spinner)findViewById(R.id.compleCountrySpinner);
         LinearLayout countryContainerLinearLayout = (LinearLayout)findViewById(R.id.countryContainerLinearLayout);
 
         final ArrayAdapter locationSpinnerAdapter = ArrayAdapter.createFromResource(
@@ -71,5 +73,26 @@ public class SpinnerActivity extends AppCompatActivity {
         });
 
         countryContainerLinearLayout.addView(countrySpinner);
+
+        /**
+         * Country complex Spinner
+         */
+        List<CountryDto> complexCountryDto = new ArrayList<CountryDto>();
+
+        CountryDto america = new CountryDto(0L, "America", "us", this.getResources().getDrawable(R.drawable.ic_america_flag));
+        CountryDto china = new CountryDto(1L, "China", "cn", this.getResources().getDrawable(R.drawable.ic_china_flag));
+        CountryDto japan = new CountryDto(2L, "Japan", "jp", this.getResources().getDrawable(R.drawable.ic_japan_flag));
+        CountryDto russia = new CountryDto(3L, "Russia", "rs", this.getResources().getDrawable(R.drawable.ic_russia_flag));
+        CountryDto england = new CountryDto(4L, "England", "en", this.getResources().getDrawable(R.drawable.ic_england_flag));
+
+        complexCountryDto.add(america);
+        complexCountryDto.add(china);
+        complexCountryDto.add(japan);
+        complexCountryDto.add(russia);
+        complexCountryDto.add(england);
+
+        ComplexSpinnerAdapter complexSpinerAdapter = new ComplexSpinnerAdapter(SpinnerActivity.this, R.layout.spinner_country_complex_adapter_layout);
+        complexSpinerAdapter.addAll(complexCountryDto);
+        compleCountrySpinner.setAdapter(complexSpinerAdapter);
     }
 }
