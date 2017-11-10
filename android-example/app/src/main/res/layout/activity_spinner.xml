@@ -1,62 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.example.vmtung.example.SpinnerActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="android:spinnerMode=dialog|dropdown"
-        />
-    <Spinner
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/juiceSpinner"
-        android:layout_marginTop="10dp"
-        >
-    </Spinner>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/lauch_spinner"
-        android:id="@+id/countrySpinnerButton"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/countryContainerLinearLayout"
-        >
-    </LinearLayout>
+        android:layout_height="match_parent">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.example.vmtung.example.SpinnerActivity">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="android:spinnerMode=dialog|dropdown"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/juiceSpinner"
+                android:layout_marginTop="10dp"
+                >
+            </Spinner>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lauch_spinner"
+                android:id="@+id/countrySpinnerButton"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/countryContainerLinearLayout"
+                >
+            </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="we can place image, text, etc v.v... inside spinner item."
-        />
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/complexCountrySpinner"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        >
-    </Spinner>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Data have 5 item. But we only show 3. "
-        />
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/hideItemSpinner"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        >
-    </Spinner>
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="we can place image, text, etc v.v... inside spinner item."
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/complexCountrySpinner"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+            </Spinner>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data have 5 item. But we only show 3. "
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hideItemSpinner"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+            </Spinner>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Each item have different view."
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/differentItemViewSpinner"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                >
+            </Spinner>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

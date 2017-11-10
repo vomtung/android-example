@@ -25,6 +25,7 @@ public class SpinnerActivity extends AppCompatActivity {
         final Button countrySpinnerButton =(Button)findViewById(R.id.countrySpinnerButton);
         final Spinner complexCountrySpinner =(Spinner)findViewById(R.id.complexCountrySpinner);
         final Spinner hideItemSpinner =(Spinner)findViewById(R.id.hideItemSpinner);
+        final Spinner differentItemViewSpinner =(Spinner)findViewById(R.id.differentItemViewSpinner);
         LinearLayout countryContainerLinearLayout = (LinearLayout)findViewById(R.id.countryContainerLinearLayout);
 
         final ArrayAdapter locationSpinnerAdapter = ArrayAdapter.createFromResource(
@@ -116,5 +117,26 @@ public class SpinnerActivity extends AppCompatActivity {
         HideItemSpinnerAdapter hideItemSpinerAdapter = new HideItemSpinnerAdapter(SpinnerActivity.this, R.layout.spinner_country_complex_adapter_layout);
         hideItemSpinerAdapter.addAll(hideItemDto);
         hideItemSpinner.setAdapter(hideItemSpinerAdapter);
+
+        /**
+         * Different Item View Spinner
+         */
+        List<CountryDto> differentItemViewDto = new ArrayList<CountryDto>();
+
+        CountryDto america3 = new CountryDto(0L, "America", "us", this.getResources().getDrawable(R.drawable.ic_america_flag));
+        CountryDto china3 = new CountryDto(1L, "China", "cn", this.getResources().getDrawable(R.drawable.ic_china_flag));
+        CountryDto japan3 = new CountryDto(2L, "Japan", "jp", this.getResources().getDrawable(R.drawable.ic_japan_flag));
+        CountryDto russia3 = new CountryDto(3L, "Russia", "rs", this.getResources().getDrawable(R.drawable.ic_russia_flag));
+        CountryDto england3 = new CountryDto(4L, "England", "en", this.getResources().getDrawable(R.drawable.ic_england_flag));
+
+        differentItemViewDto.add(america3);
+        differentItemViewDto.add(china3);
+        differentItemViewDto.add(japan3);
+        differentItemViewDto.add(russia3);
+        differentItemViewDto.add(england3);
+
+        DifferentItemViewSpinnerAdapter differentItemViewSpinnerAdapter = new DifferentItemViewSpinnerAdapter(SpinnerActivity.this, R.layout.spinner_country_complex_adapter_layout);
+        differentItemViewSpinnerAdapter.addAll(differentItemViewDto);
+        differentItemViewSpinner.setAdapter(differentItemViewSpinnerAdapter);
     }
 }
