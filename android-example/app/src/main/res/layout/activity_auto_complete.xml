@@ -18,5 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/countries_list"
+        android:hint="enter America, Japan, China, Vietnam, etc..."
         />
 </LinearLayout>
