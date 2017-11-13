@@ -54,9 +54,12 @@
             android:label="@string/title_activity_collapsing_toolbar_layout"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AutoCompleteActivity" />
-        <activity android:name=".CollapsingToolbarLayout2Activity"
-            android:theme="@style/AppTheme.NoActionBar" >
-
+        <activity
+            android:name=".CollapsingToolbarLayout2Activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".DrawableResourceExampleActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
         </activity>
     </application>
 

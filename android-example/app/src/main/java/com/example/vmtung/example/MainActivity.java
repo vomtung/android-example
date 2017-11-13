@@ -3,6 +3,7 @@ package com.example.vmtung.example;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.view.View;
 import android.widget.Button;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Button collapsingToolbarLayoutButton = (Button)findViewById(R.id.collapsingToolbarLayoutButton);
         Button collapsingToolbarLayout2Button = (Button)findViewById(R.id.collapsingToolbarLayout2Button);
         Button autocompleteButton = (Button)findViewById(R.id.autocompleteButton);
+        Button drawableResourceButton = (Button)findViewById(R.id.drawableResourceButton);
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,6 +206,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AutoCompleteActivity.class);
                 MainActivity.this.startActivity(i);
+            }
+        });
+
+        drawableResourceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DrawableResourceExampleActivity.class);
+                startActivity(i);
             }
         });
     }
