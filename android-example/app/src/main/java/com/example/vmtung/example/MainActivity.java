@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button screenPropertyButton = (Button)findViewById(R.id.screenPropertyButton);
         Button popoverButton = (Button)findViewById(R.id.popoverButton);
         Button menuButton = (Button)findViewById(R.id.menuButton);
         Button eventOrderButton = (Button)findViewById(R.id.eventOrderButton);
@@ -35,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         Button collapsingToolbarLayout2Button = (Button)findViewById(R.id.collapsingToolbarLayout2Button);
         Button autocompleteButton = (Button)findViewById(R.id.autocompleteButton);
         Button drawableResourceButton = (Button)findViewById(R.id.drawableResourceButton);
+
+        screenPropertyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ScreenPropertyActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
 
         popoverButton.setOnClickListener(new View.OnClickListener() {
             @Override

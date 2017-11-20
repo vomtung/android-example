@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -35,7 +36,10 @@ public class PopoverExampleActivity extends AppCompatActivity {
         final View filterDialogLayoutShadow = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_example, null);
         final View filterDialogDarkMaskLayout = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_dark_mask_view, null);
         final View dialogMadrginLayout= layoutInflater.inflate(R.layout.dialog_popupwindow_popover_margin, null);
+        final View dialogBottomLayout= layoutInflater.inflate(R.layout.dialog_popover_windowpopup_bottom, null);
         final Button startPopoverShadowButton = (Button)findViewById(R.id.startPopoverShadowButton);
+        final Button bottomPopoverButton = (Button)findViewById(R.id.bottomPopoverButton);
+        final View bottomAncherView = (View)findViewById(R.id.bottomAncherView);
 
         final PopupWindow popupWindow = new PopupWindow(filterDialogLayoutShadow,
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -52,6 +56,17 @@ public class PopoverExampleActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 true);
 
+        final PopupWindow bottomPopupWindow = new PopupWindow(
+                dialogBottomLayout,
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                true);
+
+        final View pupLayout = layoutInflater.inflate(R.layout.dialog_popover_windowpopup_bottom, null);
+        pupLayout.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+
+
         // Closes the popup window when touch outside.
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
@@ -60,7 +75,7 @@ public class PopoverExampleActivity extends AppCompatActivity {
         popupWindowMargin.setFocusable(true);
         popupWindowMargin.setWidth(width-200);
 
-        View filterDialogLayout = layoutInflater.inflate(R.layout.dialog_filter_received_overtime, null);
+        final View filterDialogLayout = layoutInflater.inflate(R.layout.dialog_filter_received_overtime, null);
         final PopupWindow pwindow = new PopupWindow(filterDialogLayout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT,true);
         // Closes the popup window when touch outside.
         pwindow.setOutsideTouchable(true);
@@ -127,5 +142,18 @@ public class PopoverExampleActivity extends AppCompatActivity {
                 pwindow.showAsDropDown(startPopoverShadowButton);
             }
         });
+
+        bottomPopoverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomPopupWindow.showAsDropDown(bottomAncherView,0, 0);
+
+            }
+        });
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 }

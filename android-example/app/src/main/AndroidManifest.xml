@@ -56,11 +56,11 @@
         <activity android:name=".AutoCompleteActivity" />
         <activity
             android:name=".CollapsingToolbarLayout2Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DrawableResourceExampleActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".DrawableResourceExampleActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
-        </activity>
+        <activity android:name=".ScreenPropertyActivity"></activity>
     </application>
 
 </manifest>

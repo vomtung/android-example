@@ -13,54 +13,75 @@
         android:text="click_me"
         android:visibility="gone"
         />
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.vmtung.example.PopoverExampleActivity">
-    <TextView
+    <ScrollView
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Popover is a type of iOS opoup, in Android similar popup Widget is PopupWindow"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/startPopover"
-        android:text="click_me"
-        android:layout_marginTop="20dp"
-        android:background="@color/green"
-        />
+        tools:context="com.example.vmtung.example.PopoverExampleActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="com.example.vmtung.example.PopoverExampleActivity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/startPopoverMask"
-        android:text="start Popover Mask"
-        android:layout_marginTop="20dp"
-        android:background="#614126"
-        />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Popover is a type of iOS opoup, in Android similar popup Widget is PopupWindow"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/bottomPopoverButton"
+                android:text="Popover in Bottom of Screen"
+                android:layout_marginTop="20dp"
+                android:background="@color/brown"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/startPopover"
+                android:text="click_me"
+                android:layout_marginTop="20dp"
+                android:background="@color/green"
+                />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/startPopoverMaskMagin"
-        android:text="start Popover with margin left right"
-        android:layout_marginTop="20dp"
-        android:background="@color/green"
-        />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/startPopoverMask"
+                android:text="start Popover Mask"
+                android:layout_marginTop="20dp"
+                android:background="#614126"
+                />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/startPopoverShadowButton"
-        android:text="start Popover with Shadow and full Bottom"
-        android:layout_marginTop="20dp"
-        android:background="#FF1199"
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/startPopoverMaskMagin"
+                android:text="start Popover with margin left right"
+                android:layout_marginTop="20dp"
+                android:background="@color/green"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/startPopoverShadowButton"
+                android:text="start Popover with Shadow and full Bottom"
+                android:layout_marginTop="20dp"
+                android:background="#FF1199"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+    <View
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:id="@+id/bottomAncherView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/bottom_popup_height"
         />
-</LinearLayout>
 </RelativeLayout>
