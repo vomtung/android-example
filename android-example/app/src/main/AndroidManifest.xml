@@ -59,8 +59,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DrawableResourceExampleActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ScreenPropertyActivity" />
+        <activity
+            android:name=".PropertyAnimationActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ScreenPropertyActivity"></activity>
+        <activity android:name=".DragAndDropActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

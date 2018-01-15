@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Button collapsingToolbarLayout2Button = (Button)findViewById(R.id.collapsingToolbarLayout2Button);
         Button autocompleteButton = (Button)findViewById(R.id.autocompleteButton);
         Button drawableResourceButton = (Button)findViewById(R.id.drawableResourceButton);
+        Button propertyAnimationButton = (Button)findViewById(R.id.propertyAnimationButton);
+        Button dragAndDropButton = (Button)findViewById(R.id.dragAndDropButton);
 
         screenPropertyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,6 +224,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, DrawableResourceExampleActivity.class);
+                startActivity(i);
+            }
+        });
+
+        propertyAnimationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, PropertyAnimationActivity.class);
+                startActivity(i);
+            }
+        });
+
+        dragAndDropButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DragAndDropActivity.class);
                 startActivity(i);
             }
         });
