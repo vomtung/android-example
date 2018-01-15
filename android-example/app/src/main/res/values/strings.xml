@@ -275,5 +275,10 @@
     <string name="View_Animation">View Animation</string>
     <string name="ValueAnimator">ValueAnimator</string>
     <string name="ObjectAnimator">ObjectAnimator</string>
+    <string name="AnimatorListener">AnimatorListener</string>
+    <string name="Start">Start</string>
+    <string name="End">End</string>
+    <string name="Repeat">Repeat</string>
+    <string name="AnimatorSet_XML">AnimatorSet XML</string>
 
 </resources>
