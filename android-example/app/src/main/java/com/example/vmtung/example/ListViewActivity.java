@@ -54,16 +54,17 @@ public class ListViewActivity extends AppCompatActivity {
 
             @Override
             public void onScroll(AbsListView absListView, int i, int i1, int i2) {
-                String result = logEditText.getText().toString();
+
 
                 ItemJuiceListExampleObject firstVisibleItem = juiceListAdapter.getItem(i);
 
-                result = "firstVisibleItem:"+firstVisibleItem.toString() +",index:"+i+"\n"
+                String result = "---------------------------------\n"
+                        +"firstVisibleItem:"+firstVisibleItem.toString() +",index:"+i+"\n"
                         +"visibleItemCount:"+i1 +"\n"
                         +"totalItemCount:"+i2 +"\n"
                         +"is end(bottom) of list:"+((i+i1==i2)?"TRUE":"FALSE") +"\n";
 
-                logEditText.setText(result);
+                logEditText.append(result);
 
             }
         });

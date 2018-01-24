@@ -13,6 +13,9 @@
         android:layout_height="200dp"
         android:id="@+id/logEditText"
         android:editable="false"
+        android:background="@color/black"
+        android:textColor="@color/green"
+        android:gravity="bottom"
         />
     <ListView
         android:layout_width="match_parent"
