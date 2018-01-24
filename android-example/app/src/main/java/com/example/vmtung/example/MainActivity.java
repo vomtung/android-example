@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button eventOrderButton = (Button)findViewById(R.id.eventOrderButton);
         Button spinnerExampleButton = (Button)findViewById(R.id.spinnerExampleButton);
         Button alertDialogExampleButton = (Button)findViewById(R.id.alertDialogExampleButton);
+        Button bottomBarButton = (Button)findViewById(R.id.bottomBarButton);
         Button compundViewButton = (Button)findViewById(R.id.compundViewButton);
         Button customViewButton = (Button)findViewById(R.id.customViewButton);
         Button canvasButton = (Button)findViewById(R.id.canvasButton);
@@ -59,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, MenuActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        bottomBarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, BottomNavigationActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });
