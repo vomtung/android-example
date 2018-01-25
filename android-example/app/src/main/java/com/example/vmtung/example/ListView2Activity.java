@@ -13,8 +13,11 @@ public class ListView2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view2);
         String[]mTestArray = getResources().getStringArray(R.array.array_juices);
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(ListView2Activity.this, android.R.layout.simple_list_item_single_choice, mTestArray);
-        ListView nationListView = findViewById(R.id.nationListView);
-        nationListView.setAdapter(adapter);
+        ArrayAdapter<String>adapterSingle = new ArrayAdapter<String>(ListView2Activity.this, android.R.layout.simple_list_item_single_choice, mTestArray);
+        ArrayAdapter<String>adapterMultiple = new ArrayAdapter<String>(ListView2Activity.this, android.R.layout.simple_list_item_multiple_choice, mTestArray);
+        ListView nationSingleListView = findViewById(R.id.nationSingleListView);
+        ListView nationMultipleChoiceListView = findViewById(R.id.nationMultipleChoiceListView);
+        nationSingleListView.setAdapter(adapterSingle);
+        nationMultipleChoiceListView.setAdapter(adapterMultiple);
     }
 }

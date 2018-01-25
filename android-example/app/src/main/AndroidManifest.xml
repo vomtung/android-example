@@ -70,10 +70,11 @@
         <activity
             android:name=".BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation" />
-        <activity android:name=".ListView2Activity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+        <activity
+            android:name=".ListView2Activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ListView3Activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -293,5 +293,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="bottom_bar">Bottom bar</string>
     <string name="list_view_2_example">list view 2 example</string>
+    <string name="list_view_3_example">list view 3 example</string>
 
 </resources>

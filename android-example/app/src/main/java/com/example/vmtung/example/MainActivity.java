@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Button canvasButton5 = (Button)findViewById(R.id.canvasButton5);
         Button listViewButton = (Button)findViewById(R.id.listViewButton);
         Button listView2Button = (Button)findViewById(R.id.listView2Button);
+        Button listView3Button = (Button)findViewById(R.id.listView3Button);
         Button collapsingToolbarLayout3Button = (Button)findViewById(R.id.collapsingToolbarLayout3Button);
         Button scrollingActivity2Button = (Button)findViewById(R.id.ScrollingActivity2Button);
         Button dynamicAddViewButton = (Button)findViewById(R.id.dynamicAddViewButton);
@@ -170,6 +171,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListView2Activity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        listView3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ListView3Activity.class);
                 MainActivity.this.startActivity(i);
             }
         });
