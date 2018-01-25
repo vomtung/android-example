@@ -203,6 +203,13 @@
         <item>Lemon</item>
         <item>grape</item>
         <item>Guava</item>
+        <item>Banana</item>
+        <item>Apple</item>
+        <item>Cherries</item>
+        <item>Clementine</item>
+        <item>Lime</item>
+        <item>Mango</item>
+        <item>Pear</item>
     </array>
 
     <array name="array_countries">
@@ -285,5 +292,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="bottom_bar">Bottom bar</string>
+    <string name="list_view_2_example">list view 2 example</string>
 
 </resources>

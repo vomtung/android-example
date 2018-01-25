@@ -206,6 +206,12 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/listView2Button"
+                android:text="@string/list_view_2_example" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/rotateViewButton"
                 android:text="@string/rotate_view_example"
                 app:layout_constraintBottom_toBottomOf="parent"
