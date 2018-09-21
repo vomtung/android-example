@@ -19,7 +19,6 @@ import au.com.linearfinancial.bpms.domain.entity.Application;
 import au.com.linearfinancial.bpms.domain.entity.AuditTrail;
 import au.com.linearfinancial.bpms.domain.entity.LegalEntity;
 import au.com.linearfinancial.bpms.domain.entity.util.ApplicationTypeNameEnum;
-import au.com.linearfinancial.bpms.logic.account.file.LegalEntityImportInfoService;
 import au.com.linearfinancial.bpms.microservice.MicroserviceMessagePublisher;
 import au.com.linearfinancial.bpms.microservice.dto.CreateAccountResponseDto;
 import au.com.linearfinancial.bpms.microservice.utils.MicroserviceUtils;
@@ -47,9 +46,6 @@ public class MicroserviceAccounManagerImpl implements MicroserviceAccountManager
     private ApplicationServiceImpl applicationService;
     
     @Autowired
-
-    private LegalEntityImportInfoService legalEntityImportInfoService;
-
     private AuditTrailService auditTrailService;
 
     @Override
@@ -83,7 +79,6 @@ public class MicroserviceAccounManagerImpl implements MicroserviceAccountManager
                 // Convert to legal entity
                 LegalEntity legalEntity = applicationService.convertToLegalEntity(application, applicationType);
                 log.info("LegalEntity created id = " + legalEntity.getId());
-
                 AuditTrail createLegalEntityTrail = new AuditTrail(legalEntity, null, "Create", application.getAdvisor());
                 createLegalEntityTrail.setReason("Account Microservice Creation");
                 createLegalEntityTrail.setDiffNew(createLegalEntityTrail.getDetail());
@@ -91,10 +86,7 @@ public class MicroserviceAccounManagerImpl implements MicroserviceAccountManager
 
                 // Complete application
                 application = applicationService.completeApplication(application);
-                
-                //create LegalEntityImportInfo
-                legalEntityImportInfoService.createImportInfo(application);
-                
+
                 // Create success response
                 CreateAccountResponseDto createdAccount = new CreateAccountResponseDto();
                 createdAccount.setCode(legalEntity.getCode());
