@@ -18,6 +18,7 @@ import com.linear.common.jsonapi.ApiSuccessResult;
 import au.com.linearfinancial.bpms.domain.entity.Application;
 import au.com.linearfinancial.bpms.domain.entity.LegalEntity;
 import au.com.linearfinancial.bpms.domain.entity.util.ApplicationTypeNameEnum;
+import au.com.linearfinancial.bpms.logic.account.file.LegalEntityImportInfoService;
 import au.com.linearfinancial.bpms.microservice.MicroserviceMessagePublisher;
 import au.com.linearfinancial.bpms.microservice.dto.CreateAccountResponseDto;
 import au.com.linearfinancial.bpms.microservice.utils.MicroserviceUtils;
@@ -42,6 +43,9 @@ public class MicroserviceAccounManagerImpl implements MicroserviceAccountManager
     
     @Autowired
     private ApplicationServiceImpl applicationService;
+    
+    @Autowired
+    private LegalEntityImportInfoService legalEntityImportInfoService;
 
     @Override
     public void handleAccountCreateRequest(ApiSuccessResult<?> createRequest)
@@ -70,10 +74,13 @@ public class MicroserviceAccounManagerImpl implements MicroserviceAccountManager
                 // Convert to legal entity
                 LegalEntity legalEntity = applicationService.convertToLegalEntity(application, applicationType);
                 log.info("LegalEntity created id = " + legalEntity.getId());
-
+                
                 // Complete application
                 application = applicationService.completeApplication(application);
-
+                
+                //create LegalEntityImportInfo
+                legalEntityImportInfoService.createImportInfo(application);
+                
                 // Create success response
                 CreateAccountResponseDto createdAccount = new CreateAccountResponseDto();
                 createdAccount.setCode(legalEntity.getCode());
