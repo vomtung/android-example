@@ -16,14 +16,13 @@ import com.linear.common.jsonapi.ApiResult;
 import com.linear.common.jsonapi.ApiSuccessResult;
 
 import au.com.linearfinancial.bpms.domain.entity.Application;
-import au.com.linearfinancial.bpms.domain.entity.AuditTrail;
 import au.com.linearfinancial.bpms.domain.entity.LegalEntity;
 import au.com.linearfinancial.bpms.domain.entity.util.ApplicationTypeNameEnum;
+import au.com.linearfinancial.bpms.logic.account.file.LegalEntityImportInfoService;
 import au.com.linearfinancial.bpms.microservice.MicroserviceMessagePublisher;
 import au.com.linearfinancial.bpms.microservice.dto.CreateAccountResponseDto;
 import au.com.linearfinancial.bpms.microservice.utils.MicroserviceUtils;
 import au.com.linearfinancial.bpms.microservice.validator.MicroserviceValidator;
-import au.com.linearfinancial.bpms.service.AuditTrail.AuditTrailService;
 import au.com.linearfinancial.bpms.service.application.ApplicationServiceImpl;
 
 @Service("microserviceAccounManagerImpl")
@@ -46,7 +45,7 @@ public class MicroserviceAccounManagerImpl implements MicroserviceAccountManager
     private ApplicationServiceImpl applicationService;
     
     @Autowired
-    private AuditTrailService auditTrailService;
+    private LegalEntityImportInfoService legalEntityImportInfoService;
 
     @Override
     public void handleAccountCreateRequest(ApiSuccessResult<?> createRequest)
@@ -71,22 +70,17 @@ public class MicroserviceAccounManagerImpl implements MicroserviceAccountManager
                 // Transform into approved application entity
                 Application application = accountMicroservice.createApprovedApplication(applicationDto);
                 log.info("Application created id = " + application.getId());
-                AuditTrail createApplicationTrail = new AuditTrail(application, null, "Create", application.getAdvisor());
-                createApplicationTrail.setReason("Account Microservice Creation");
-                createApplicationTrail.setDiffNew(createApplicationTrail.getDetail());
-                auditTrailService.saveAuditTrail(createApplicationTrail);
 
                 // Convert to legal entity
                 LegalEntity legalEntity = applicationService.convertToLegalEntity(application, applicationType);
                 log.info("LegalEntity created id = " + legalEntity.getId());
-                AuditTrail createLegalEntityTrail = new AuditTrail(legalEntity, null, "Create", application.getAdvisor());
-                createLegalEntityTrail.setReason("Account Microservice Creation");
-                createLegalEntityTrail.setDiffNew(createLegalEntityTrail.getDetail());
-                auditTrailService.saveAuditTrail(createLegalEntityTrail);
-
+                
                 // Complete application
                 application = applicationService.completeApplication(application);
-
+                
+                //create LegalEntityImportInfo
+                legalEntityImportInfoService.createImportInfo(application);
+                
                 // Create success response
                 CreateAccountResponseDto createdAccount = new CreateAccountResponseDto();
                 createdAccount.setCode(legalEntity.getCode());
